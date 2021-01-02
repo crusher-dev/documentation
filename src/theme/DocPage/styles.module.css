@@ -54,6 +54,10 @@ ul ul :global(.table-of-contents__link--active::before) {
   left: -33px;
 }
 
+.prism-code{
+  background: #151b1e;
+}
+
 .doc {
   --ifm-heading-color: var(--palette-white);
   --ifm-container-width: 1000px;

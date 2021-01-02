@@ -175,11 +175,7 @@ const config = {
           to: "/docs/introduction/",
           activeBasePath: "docs",
         },
-        {
-          label: "Blog",
-          to: "/blog/",
-          position: "left",
-        },
+
         {
           label: "GitHub",
           className: "navbar__item--github",

@@ -5,15 +5,15 @@
 **/
 
 :root {
-  --palette-charade: #21222c;
+  --palette-charade: #192125;
   --palette-gray: #32343e;
   --palette-green: #66bb6a;
   --palette-midnight: #141725;
   --palette-pale-blue: #b1b5d3;
-  --palette-pink: #d14671;
+  --palette-pink: #5B76F7;
   --palette-pink-darker: #be2f5b;
   --palette-rock: rgb(var(--palette-rock-raw));
-  --palette-rock-raw: 38, 40, 51;
+  --palette-rock-raw: 22, 30, 35;
   --palette-sky: #81d3f9;
   --palette-turquoise: #0cc0df;
   --palette-white: #fff;
@@ -107,6 +107,11 @@ html[data-theme="dark"] .DocSearch {
     var(--palette-gray) 0%,
     var(--palette-rock) 100%
   );
+}
+
+.announcement__content_src-theme-AnnouncementBar- {
+  background: #0b0f12;
+  color: #fff;
 }
 
 /**
