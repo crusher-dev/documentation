@@ -4,8 +4,8 @@ sidebar_label: REST
 description: REST API reference documentation.
 ---
 
-The QuestDB REST API is based on standard HTTP features and is understood by
-off-the-shelf HTTP clients. It provides a simple way to interact with QuestDB
+The Crusher REST API is based on standard HTTP features and is understood by
+off-the-shelf HTTP clients. It provides a simple way to interact with Crusher
 and is compatible with most programming languages. API functions are fully keyed
 on the URL and they use query parameters as their arguments.
 
@@ -45,7 +45,7 @@ multipart/form-data with following query parameters:
 | `atomicity`   | No       | `2`              | `0`, `1` or `2`. Behaviour when an error is detected in the data. `0`: the entire file will be skipped. `1`: the row is skipped. `2`: the column is skipped.                                                         |
 | `durable`     | No       | `false`          | `true` or `false`. When set to `true`, import will be resilient against OS errors or power losses by forcing the data to be fully persisted before sending a response back to the user.                              |
 | `fmt`         | No       | `tabular`        | Can be set to `json` to get the response formatted as such.                                                                                                                                                          |
-| `forceHeader` | No       | `false`          | `true` or `false`. When `false`, QuestDB will try to infer if the first line of the file is the header line. When set to `true`, QuestDB will expect that line to be the header line.                                |
+| `forceHeader` | No       | `false`          | `true` or `false`. When `false`, Crusher will try to infer if the first line of the file is the header line. When set to `true`, Crusher will expect that line to be the header line.                                |
 | `name`        | No       | Name of the file | Name of the table to create, [see below](/docs/reference/api/rest/#names).                                                                                                                                           |
 | `overwrite`   | No       | `false`          | `true` or `false`. When set to true, any existing data or structure will be overwritten.                                                                                                                             |
 | `partitionBy` | No       | `NONE`           | See [partitions](/docs/concept/partitions/#properties).                                                                                                                                                              |
@@ -88,7 +88,7 @@ to meet convenience and performance demands.
 
 #### Atomicity
 
-QuestDB is fully insured against any connection problems. If the server detects
+Crusher is fully insured against any connection problems. If the server detects
 closed socket(s), the entire request is rolled back instantly and transparently
 for any existing readers. The only time data can be partially imported is when
 atomicity is in `relaxed` mode and data cannot be converted to column type. In
@@ -98,22 +98,22 @@ stream request data into table.
 #### Consistency
 
 This property is guaranteed by consistency of append transactions against
-QuestDB storage engine.
+Crusher storage engine.
 
 #### Isolation
 
-Data is committed to QuestDB storage engine at end of request. Uncommitted
+Data is committed to Crusher storage engine at end of request. Uncommitted
 transactions are not visible to readers.
 
 #### Durability
 
 `/imp` streams data from network socket buffer directly into memory mapped
 files. At this point data is handed over to the OS and is resilient against
-QuestDB internal errors and unlikely but hypothetically possible crashes. This
+Crusher internal errors and unlikely but hypothetically possible crashes. This
 is default method of appending data and it is chosen for its performance
 characteristics. In cases where transaction has to be resilient against OS
 errors or power losses physical durability can be enforced. At a cost of append
-performance QuestDB storage engine will also guarantee that each memory block is
+performance Crusher storage engine will also guarantee that each memory block is
 flushed to physical device.
 
 ### Examples
@@ -213,7 +213,7 @@ closed.
 | `limit`   | No       |         | Paging parameter. For example, `limit=10,20` will return row numbers 10 thru to 20 inclusive and `limit=20` will return first 20 rows, which is equivalent to `limit=0,20`. `limit=-20` will return the last 20 rows. |
 | `nm`      | No       | `false` | `true` or `false`. Skips the metadata section of the response when set to `true`.                                                                                                                                     |
 | `query`   | Yes      |         | URL encoded query text. It can be multi-line.                                                                                                                                                                         |
-| `timings` | No       | `false` | `true` or `false`. When set to `true`, QuestDB will also include a `timings` property in the response which gives details about the execution.                                                                        |
+| `timings` | No       | `false` | `true` or `false`. When set to `true`, Crusher will also include a `timings` property in the response which gives details about the execution.                                                                        |
 
 The parameters must be URL encoded.
 
@@ -356,7 +356,7 @@ The HTTP status code will be set to `200` and the response will be:
 
 ### Error response
 
-When a query contains syntax errors, QuestDB will attempt to return as much
+When a query contains syntax errors, Crusher will attempt to return as much
 diagnostic information as possible.
 
 Considering the query:

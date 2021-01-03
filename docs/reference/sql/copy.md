@@ -20,9 +20,9 @@ is automatic.
 
 ## Options
 
-- `with headers true` - QuestDB will automatically assume the first row is a
+- `with headers true` - Crusher will automatically assume the first row is a
   header.
-- `with headers false` - QuestDB will use schema recognition to determine
+- `with headers false` - Crusher will use schema recognition to determine
   whether the first rows should be used as header.
 
 :::note
@@ -38,9 +38,9 @@ cairo.sql.copy.root=/Users/UserName/Desktop
 :::
 
 The `copy directory` can be on a local disk to the server, on a remote disk, or
-a remote filesystem. QuestDB will enforce that the tables are only written from
+a remote filesystem. Crusher will enforce that the tables are only written from
 files located in a directory relative to the `copy directory`. This is a
-security feature to disallow random file access by QuestDB.
+security feature to disallow random file access by Crusher.
 
 ## Examples
 

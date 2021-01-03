@@ -4,7 +4,7 @@ sidebar_label: GROUP BY
 description: GROUP BY SQL keyword reference documentation.
 ---
 
-Groups aggregation calculations by one or several keys. In QuestDB, this clause
+Groups aggregation calculations by one or several keys. In Crusher, this clause
 is [optional](/docs/concept/sql-extensions/#optionality-of-group-by/).
 
 ## Syntax
@@ -13,7 +13,7 @@ is [optional](/docs/concept/sql-extensions/#optionality-of-group-by/).
 
 :::note
 
-QuestDB groups aggregation results implicitly and does not require the GROUP BY
+Crusher groups aggregation results implicitly and does not require the GROUP BY
 keyword. It is only supported for convenience. Using the GROUP BY clause
 explicitly will return the same results as if the clause was omitted.
 

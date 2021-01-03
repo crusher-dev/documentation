@@ -1,23 +1,23 @@
 ---
 title: Connect
 description:
-  This page has instructions demonstrating how to connect to QuestDB from
+  This page has instructions demonstrating how to connect to Crusher from
   NodeJS, Java or Go. The examples show the Postgres and InfluxDB integrations.
 ---
 
-This page shows how to connect to QuestDB using different programming languages
+This page shows how to connect to Crusher using different programming languages
 or tools.
 
 ## First things first
 
-Make sure you have QuestDB running and accessible, you can do so from
+Make sure you have Crusher running and accessible, you can do so from
 [Docker](/docs/get-started/docker/), the [binaries](/docs/get-started/binaries/)
 or [Homebrew](/docs/get-started/homebrew/) for macOS users.
 
 ## Postgres compatibility
 
 You can query data using the [Postgres](/docs/reference/api/postgres/) endpoint
-that QuestDB exposes. This is accessible via port `8812`.
+that Crusher exposes. This is accessible via port `8812`.
 
 import Tabs from "@theme/Tabs"
 import TabItem from "@theme/TabItem"
@@ -200,7 +200,7 @@ finally:
 
 ## InfluxDB line protocol
 
-QuestDB implements the [InfluxDB line protocol](/docs/reference/api/influxdb/),
+Crusher implements the [InfluxDB line protocol](/docs/reference/api/influxdb/),
 this endpoint is accessible on port `9009`.
 
 <Tabs defaultValue="nodejs" values={[

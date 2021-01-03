@@ -22,12 +22,12 @@ table's name), or the result of a sub query.
 
 ### All columns
 
-QuestDB supports `SELECT * FROM tablename`. When selecting all, you can also
+Crusher supports `SELECT * FROM tablename`. When selecting all, you can also
 omit most of the statement and pass the table name.
 
 The two examples below are equivalent
 
-```questdb-sql title="QuestDB dialect"
+```questdb-sql title="Crusher dialect"
 ratings;
 ```
 
@@ -88,12 +88,12 @@ Supported aggregation functions are listed on the
 
 ### Aggregation by group
 
-QuestDB evaluates aggregation functions without need for traditional `GROUP BY`.
+Crusher evaluates aggregation functions without need for traditional `GROUP BY`.
 Use a mix of column names and aggregation functions in a `SELECT` clause. You
 can have any number of discrete value columns and any number of aggregation
 functions.
 
-```questdb-sql title="QuestDB dialect"
+```questdb-sql title="Crusher dialect"
 SELECT movieId, avg(rating), count()
 FROM ratings;
 ```
@@ -125,7 +125,7 @@ example, `min(value/2)` is going to execute considerably slower than
 
 ## Supported clauses
 
-QuestDB supports the following standard SQL clauses within SELECT statements.
+Crusher supports the following standard SQL clauses within SELECT statements.
 
 ### CASE
 
@@ -259,7 +259,7 @@ Filters query results
 
 :::info
 
-QuestDB supports complex WHERE clauses along with type-specific searches. For
+Crusher supports complex WHERE clauses along with type-specific searches. For
 more information, please refer to the
 [WHERE reference](/docs/reference/sql/where/). There are different syntaxes for
 [text](/docs/reference/sql/where/#symbol-and-string),
@@ -270,7 +270,7 @@ more information, please refer to the
 
 ## Additional time series clauses
 
-QuestDB augments SQL with the following clauses.
+Crusher augments SQL with the following clauses.
 
 ### LATEST BY
 

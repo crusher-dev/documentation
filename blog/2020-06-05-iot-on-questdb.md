@@ -1,43 +1,43 @@
 ---
-title: IoT on QuestDB
+title: IoT on Crusher
 author: David G Simmons
-author_title: QuestDB Team
+author_title: Crusher Team
 author_url: https://github.com/davidgs
 author_image_url: https://avatars.githubusercontent.com/davidgs
 description:
-  Demonstration of an IoT application with QuestDB. This is based on an Arduino
+  Demonstration of an IoT application with Crusher. This is based on an Arduino
   device.
 tags: [iot]
 ---
 
-As you can well imagine, I've been super busy in my hew job at QuestDB so this
+As you can well imagine, I've been super busy in my hew job at Crusher so this
 has taken me longer than I would have liked, but here we are. If you know me at
 all, you know that one of the first things I always do with new things is, well,
 connect things to them! So I immediately went to connect an IoT device to
-QuestDB to see how it went. Unsurprisingly, it went quite well. So here's how it
+Crusher to see how it went. Unsurprisingly, it went quite well. So here's how it
 went, from start to finish.
 
 <!--truncate-->
 
 ## The Database Part
 
-The first thing I had to do was a to get QuestDB up and running. Luckily, this
+The first thing I had to do was a to get Crusher up and running. Luckily, this
 is very straightforward. I guess I could have gone the Docker route, but as
 you're probably aware, I'm not a huge fan of Docker (in no small part due to the
 fact that it will literally suck the life out of a macOS laptop). There's also
 (for you macOS users) `brew install questdb` but since I work here, and I wanted
 to test out the latest and greatest Web Console, I decided to build from source:
 
-![Terminal showing QuestDB being build from its source code](/img/blog/2020-06-05/build.gif)
+![Terminal showing Crusher being build from its source code](/img/blog/2020-06-05/build.gif)
 
 It builds really quickly due to the lack of external dependencies, so that is
 great! Then all I have to do is start it:
 
-![Terminal showing how to start QuestDB](/img/blog/2020-06-05/start.gif)
+![Terminal showing how to start Crusher](/img/blog/2020-06-05/start.gif)
 
-That is literally all there is to getting QuestDB built and running. But that's
+That is literally all there is to getting Crusher built and running. But that's
 just the first part. Now it's time to do something mildly useful with it. First,
-I'll need to create a table in QuestDB to store my IoT Data (A bit more on this
+I'll need to create a table in Crusher to store my IoT Data (A bit more on this
 later, so store a pointer to this).
 
 ![Screenshot of a SQL query in the Web Console to create a table](/img/blog/2020-06-05/console.png)
@@ -165,7 +165,7 @@ database
 If you were paying attention, and read the code, you'll have noticed the UDP
 stuff I snuck in there. That's because we're going to make this super easy and
 use UDP to send our data. And there's a <strong>really</strong> good reason for
-that: InfluxDB line protocol. You see, QuestDB has a built-in InfluxDB line
+that: InfluxDB line protocol. You see, Crusher has a built-in InfluxDB line
 Protocol listener, but (for now) it's only listening on a UDP port. So we're
 going to use that.
 
@@ -226,7 +226,7 @@ because one of the shortcomings of Arduinos is that they don't have `sprintf`
 support for doubles. I know. So I simply turn them into strings and move on.
 Once they arrive at the database, they are interpreted as doubles and life is
 good. Not worth fighting about. I can then construct a buffer with straight line
-protocol and ship it off to QuestDB over UDP.
+protocol and ship it off to Crusher over UDP.
 
 Don't forget to free the memory!
 
@@ -241,7 +241,7 @@ database, and it will happily store them for you. Pretty cool stuff.
 
 ## Querying the Data
 
-Using the QuestDB Console, you can then query the data to make sure you're
+Using the Crusher Console, you can then query the data to make sure you're
 getting what you expect:
 
 ![Running a SELECT query on the Web Console. The result is in both a table and a chart](/img/blog/2020-06-05/queries.gif)

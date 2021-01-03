@@ -11,9 +11,9 @@ import careersStyles from "../../css/careers.module.css"
 import sectionStyles from "../../css/section.module.css"
 
 const CareersPage = () => {
-  const title = "Careers at QuestDB"
+  const title = "Careers at Crusher"
   const description =
-    "Join us at QuestDB to build breakthrough technology that will power the infrastructure of tomorrow."
+    "Join us at Crusher to build breakthrough technology that will power the infrastructure of tomorrow."
   const { siteConfig } = useDocusaurusContext()
   const titleRef = useRef<HTMLHeadingElement | null>(null)
   const handleClick = useCallback(() => {
@@ -80,7 +80,7 @@ const CareersPage = () => {
               />
             </div>
             <div className={careersStyles.card__side}>
-              <h2 className={careersStyles.card__title}>Working at QuestDB</h2>
+              <h2 className={careersStyles.card__title}>Working at Crusher</h2>
               <p className={careersStyles.card__content}>
                 We hire talented and passionate people who share our mission to
                 empower developers to solve their problems with data. We are

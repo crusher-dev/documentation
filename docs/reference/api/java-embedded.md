@@ -3,10 +3,10 @@ title: Java (embedded)
 description: Java embedded API reference documentation.
 ---
 
-QuestDB is written in Java and can be used as any other Java library. Moreover,
+Crusher is written in Java and can be used as any other Java library. Moreover,
 it is a single JAR with no additional dependencies.
 
-To include QuestDB in your project, use the following:
+To include Crusher in your project, use the following:
 
 import Tabs from "@theme/Tabs"
 import TabItem from "@theme/TabItem"
@@ -86,7 +86,7 @@ try (CairoEngine engine = new CairoEngine(configuration)) {
 
 #### Configure Cairo engine
 
-CairoEngine is a resource manager for the embedded QuestDB. Its main function is
+CairoEngine is a resource manager for the embedded Crusher. Its main function is
 to facilitate concurrent access to pools of `TableReader` and `TableWriter`
 instances.
 
@@ -100,7 +100,7 @@ instance will start when application starts and shuts down when application
 closes. You will need to close `CairoEngine` gracefully when the application
 stops.
 
-QuestDB provides a default configuration which only requires the
+Crusher provides a default configuration which only requires the
 `data directory` to be specified. For a more advanced usage, the whole
 `CairoConfiguration` interface can be overridden.
 
@@ -115,7 +115,7 @@ final SqlExecutionContextImpl ctx = new SqlExecutionContextImpl(engine, 1);
 ```
 
 The second argument is the number of threads that will be helping to execute SQL
-statements. Unless you are building another QuestDB server, this value should
+statements. Unless you are building another Crusher server, this value should
 always be 1.
 
 #### New SqlCompiler instance and blank table
@@ -275,7 +275,7 @@ caching of records pointless.
 
 ## InfluxDB sender library
 
-QuestDB library provides fast and efficient way of sending line protocol
+Crusher library provides fast and efficient way of sending line protocol
 messages. Sender implementation entry point is
 `io.questdb.cutlass.line.udp.LineProtoSender`, it is fully zero-GC and has
 latency in a region of 200ns per message.
@@ -327,7 +327,7 @@ buffer fills up you can use `sender.flush()`
 ### Full example
 
 This example sends multicast messages to `232.1.2.3:9009`. In this mode multiple
-QuestDB instances can receive the same message.
+Crusher instances can receive the same message.
 
 ```java title="Sending InfluxDB line protocol"
 LineProtoSender sender = new LineProtoSender(0, Net.parseIPv4("232.1.2.3"), 9009, 1024, 2);

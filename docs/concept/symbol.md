@@ -2,11 +2,11 @@
 title: Symbol
 sidebar_label: Symbol
 description:
-  Description of the symbol data type. This QuestDB specific type is used to
+  Description of the symbol data type. This Crusher specific type is used to
   store repetitive strings in order to enable certain optimizations.
 ---
 
-QuestDB introduces a specific data type called `symbol`. It is a data structure
+Crusher introduces a specific data type called `symbol`. It is a data structure
 used to store repetitive strings as a table of integers and corresponding string
 values.
 

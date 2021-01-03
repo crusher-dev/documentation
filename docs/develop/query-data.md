@@ -1,17 +1,17 @@
 ---
 title: Query data
 description:
-  This page has instructions demonstrating how to query data from QuestDB with
+  This page has instructions demonstrating how to query data from Crusher with
   NodeJS, Java, Go or cURL. The examples show the REST API as well as the
   InfluxDB and Postgres integrations.
 ---
 
-This page shows how to query data from QuestDB using different programming
+This page shows how to query data from Crusher using different programming
 languages or tools.
 
 ## First things first
 
-Make sure you have QuestDB running and accessible, you can do so from
+Make sure you have Crusher running and accessible, you can do so from
 [Docker](/docs/get-started/docker/), the [binaries](/docs/get-started/binaries/)
 or [Homebrew](/docs/get-started/homebrew/) for macOS users.
 
@@ -124,7 +124,7 @@ func checkErr(err error) {
 ## Postgres compatibility
 
 You can query data using the [Postgres](/docs/reference/api/postgres/) endpoint
-that QuestDB exposes. This is accessible via port `8812`.
+that Crusher exposes. This is accessible via port `8812`.
 
 <Tabs defaultValue="nodejs" values={[
   { label: "NodeJS", value: "nodejs" },

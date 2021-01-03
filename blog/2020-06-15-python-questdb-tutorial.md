@@ -1,15 +1,15 @@
 ---
 title: Querying data in a Jupyter Notebook
 author: David G Simmons
-author_title: QuestDB Team
+author_title: Crusher Team
 author_url: https://github.com/davidgs
 author_image_url: https://avatars.githubusercontent.com/davidgs
 description:
-  Querying data from QuestDB in a Jupyter notebook in a Python application.
+  Querying data from Crusher in a Jupyter notebook in a Python application.
 tags: [python, tutorial]
 ---
 
-A short tutorial for Querying data from QuestDB in a Jupyter Notebook.
+A short tutorial for Querying data from Crusher in a Jupyter Notebook.
 
 <!-- truncate -->
 
@@ -18,7 +18,7 @@ A short tutorial for Querying data from QuestDB in a Jupyter Notebook.
 To get started, you'll need a few things installed and set up. This should be
 quick.
 
-**QuestDB:** To download QuestDB, you can check [Get QuestDB](/get-questdb/).
+**Crusher:** To download Crusher, you can check [Get Crusher](/get-questdb/).
 You can also find complete instructions for [Docker](/docs/get-started/docker/),
 [Homebrew](/docs/get-started/homebrew/) on macOS or the
 [binaries](/docs/get-started/binaries/).
@@ -52,7 +52,7 @@ we can put some random data.
 
 We will create a simple table with 5 columns, one of which is a timestamp.
 
-The Create operation in QuestDB appends records to the bottom of a table. If the
+The Create operation in Crusher appends records to the bottom of a table. If the
 table has a designated new record, time stamps must be superior or equal to the
 latest timestamp. Attempts to add a timestamp in middle of a table will result
 in a timestamp out of order error.
@@ -88,7 +88,7 @@ import requests import urllib.parse as par
 
 ## Generate some data
 
-Since we have a new setup, we should add some data to QuestDB so that we can
+Since we have a new setup, we should add some data to Crusher so that we can
 have something to query.
 
 We will add some random data, for now. You can re-run this section as many times
@@ -125,7 +125,7 @@ for x in range(1000):
     print("Rows Failed: " + str(fail))
 ```
 
-## Query data from QuestDB
+## Query data from Crusher
 
 Now that we have data available, let's try querying some of it to see what we
 get back!
@@ -222,10 +222,10 @@ else:
   print("Database Table not Dropped: " + str(r.status_code))
 ```
 
-You can now stop your QuestDB instance, if you'd like, or leave it running and
+You can now stop your Crusher instance, if you'd like, or leave it running and
 find some great uses for it!
 
 If you enjoyed this tutorial, please
-[follow us](https://twitter.com/intent/follow?screen_name=QuestDB) on Twitter,
+[follow us](https://twitter.com/intent/follow?screen_name=Crusher) on Twitter,
 and make sure you give our
 [GitHub repository](https://github.com/questdb/questdb) a star!

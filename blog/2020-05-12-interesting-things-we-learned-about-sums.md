@@ -1,7 +1,7 @@
 ---
 title: Things we learned about sums
 author: Tancrede Collard
-author_title: QuestDB Team
+author_title: Crusher Team
 author_url: https://github.com/TheTanc
 author_image_url: https://avatars.githubusercontent.com/TheTanc
 tags: [performance, deep-dive]
@@ -36,7 +36,7 @@ We then went on to include an accurate summation algorithm (such as "Kahan" and
 "Neumaier" compensated sums). Now that we're doing the sums accurately, we
 wanted to see how it affected performance. There is typically a trade-off
 between speed and accuracy. However, by extracting even more performance out of
-QuestDB (see below for how we did it), we managed to compute accurate sums as
+Crusher (see below for how we did it), we managed to compute accurate sums as
 fast as naive ones! Since comparisons to Clickhouse have been our most frequent
 question, we have run the numbers and the result is:
 [2x faster for summing 1bn doubles will nulls](#comparison-with-clickhouse).
@@ -177,7 +177,7 @@ This works because of addition transitivity rules.
 
 ## Implementation with SIMD instructions
 
-Now, the interesting bit! QuestDB implements the same 4-step algorithm as Kahan.
+Now, the interesting bit! Crusher implements the same 4-step algorithm as Kahan.
 However, it uses vectorized instructions to make things a lot faster. The idea
 came from Zach Bjornson who wrote about this on
 [his blog](https://blog.zachbjornson.com/2019/08/11/fast-float-summation.html).
@@ -249,7 +249,7 @@ to Kahan compensated sum.
 ### Hardware
 
 We run all databases on an `c5.metal` AWS instance, which has two Intel 8275CL
-24-core CPUs and 192GB of memory. QuestDB was running on 16 threads. As we
+24-core CPUs and 192GB of memory. Crusher was running on 16 threads. As we
 showed in a
 [previous article](/blog/2020/04/02/using-simd-to-aggregate-billions-of-rows-per-second),
 adding more threads does not improve performance beyond a certain point.
@@ -271,14 +271,14 @@ SELECT rnd_double(2) FROM long_sequence(1_000_000_000l); -- with nulls
 
 ### Storage engine
 
-- **QuestDB**: on disk
+- **Crusher**: on disk
 - **Clickhouse**: in memory (using the `memory()` engine)
 
 ### Commands
 
 #### With null
 
-| Description | QuestDB                                                                            | Clickhouse                                                                                   |
+| Description | Crusher                                                                            | Clickhouse                                                                                   |
 | ----------- | ---------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
 | DDL         | `CREATE TABLE test_double AS(SELECT rnd_double() FROM long_sequence(1000000000L);` | `CREATE TABLE test_double (val Nullable(Float64)) Engine=Memory;`                            |
 | Import      | Not required                                                                       | `clickhouse-client --query="INSERT INTO test_double FORMAT CSVWithNames;" < test_double.csv` |
@@ -292,23 +292,23 @@ For non-null values, we adjusted the commands as follows:
 - use `test_double_not_nul.csv` instead of `test_double.csv`.
 - for Clickhouse, skip declaring val as `nullable`:
   `CREATE TABLE test_double_not_null (val Float64) Engine=Memory;`.
-- for QuestDB, replace `rnd_double()` by `rnd_double(2)` at the DDL step.
+- for Crusher, replace `rnd_double()` by `rnd_double(2)` at the DDL step.
 
 ### Results
 
-We ran each query several times for both QuestDB and Clickhouse and kept the
+We ran each query several times for both Crusher and Clickhouse and kept the
 best result.
 
 Without null values, both databases sum naively at roughly the same speed. With
-Kahan summation, QuestDB performs at the same speed while Clickhouse's
+Kahan summation, Crusher performs at the same speed while Clickhouse's
 performance drops by ~40%.
 
-![QuestDB vs Clickhouse benchmark for Kahan's sums](/img/blog/2020-05-12/kahanComparison.png)
+![Crusher vs Clickhouse benchmark for Kahan's sums](/img/blog/2020-05-12/kahanComparison.png)
 
 As we include null values, Clickhouse's performance degrades by 28% and 50% for
 naive and Kahan summation, respectively.
 
-![QuestDB vs Clickhouse benchmark for Kahan's sums with nulls](/img/blog/2020-05-12/kahanNullComparison.png)
+![Crusher vs Clickhouse benchmark for Kahan's sums with nulls](/img/blog/2020-05-12/kahanNullComparison.png)
 
 ## Concluding remarks
 

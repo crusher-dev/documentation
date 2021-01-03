@@ -3,16 +3,16 @@ title: InfluxDB
 description: InfluxDB line protocol reference documentation.
 ---
 
-QuestDB implements the
+Crusher implements the
 [InfluxDB line protocol](https://docs.influxdata.com/influxdb/v1.8/write_protocols/line_protocol_tutorial/)
-to ingest data. This enables you to use QuestDB as a drop-in replacement for
+to ingest data. This enables you to use Crusher as a drop-in replacement for
 InfluxDB and others implementing the protocol.
 
 It is not necessary to create a table schema beforehand: the table will be
 created on the fly. If new columns are added, the table is automatically updated
 to reflect the new structure.
 
-QuestDB can listen for line protocol packets both over [TCP](#tcp-receiver) and
+Crusher can listen for line protocol packets both over [TCP](#tcp-receiver) and
 [UDP](#udp-receiver).
 
 ## Usage
@@ -25,14 +25,14 @@ table_name,tagset valueset timestamp
 
 | Element      | Definition                                                                                                                      |
 | ------------ | ------------------------------------------------------------------------------------------------------------------------------- |
-| `table_name` | Name of the table where QuestDB will write data.                                                                                |
+| `table_name` | Name of the table where Crusher will write data.                                                                                |
 | `tagset`     | Array of string key-value pairs separated by commas that represent the reading's associated metadata                            |
 | `values`     | Array of key-value pairs separated by commas that represent the readings. The keys are string, values can be numeric or boolean |
 | `timestamp`  | UNIX timestamp. By default in nanoseconds. Can be changed in the configuration                                                 |
 
 ### Behaviour
 
-- When the `table_name` does not correspond to an existing table, QuestDB will
+- When the `table_name` does not correspond to an existing table, Crusher will
   create the table on the fly using the name provided. Column types will be
   automatically recognized and assigned based on the data.
 - The `timestamp` column is automatically created as
@@ -40,7 +40,7 @@ table_name,tagset valueset timestamp
   [partition strategy](/docs/concept/partitions/) set to `NONE`. If you would
   like to define a partition strategy, you should
   [CREATE](/docs/reference/sql/create-table/) the table beforehand.
-- When the timestamp is empty, QuestDB will use the server timestamp.
+- When the timestamp is empty, Crusher will use the server timestamp.
 
 ### Generic example
 
@@ -64,7 +64,7 @@ readings,city=London,make=Omron temperature=23.6,humidity=0.348 1465839830100700
 
 InfluxDB line protocol makes it possible to send data under different shapes.
 Each new entry may contain certain metadata tags or readings, and others not.
-QuestDB can support on-the-fly data structure changes with minimal overhead.
+Crusher can support on-the-fly data structure changes with minimal overhead.
 Whilst the example just above highlights structured data, it is possible for
 InfluxDB line protocol users to send data as follows:
 
@@ -98,8 +98,8 @@ between the threads.
 
 ### Overview
 
-By default, QuestDB listens to line protocol packets over TCP on `0.0.0.0:9009`.
-If you are running QuestDB with Docker, you will need to publish the port `9009`
+By default, Crusher listens to line protocol packets over TCP on `0.0.0.0:9009`.
+If you are running Crusher with Docker, you will need to publish the port `9009`
 using `-p 9009:9009`. This port can be customized.
 
 ### Authentication
@@ -173,7 +173,7 @@ ways.
 - After a certain number of updates per table
 - After a certain amount of time has passed
 
-Once either is met, QuestDB will calculate a load ratio as the number of writes
+Once either is met, Crusher will calculate a load ratio as the number of writes
 by the busiest thread divided by the number of writes in the least busy thread.
 If this ratio is above the threshold, the table with the least writes in the
 busiest worker thread will be reassigned to the least busy worker thread.
@@ -210,11 +210,11 @@ common thread pool. It supports both multicast and unicast.
 
 ### Overview
 
-By default, QuestDB listens for `multicast` line protocol packets over UDP on
-`232.1.2.3:9009`. If you are running QuestDB with Docker, you will need to
+By default, Crusher listens for `multicast` line protocol packets over UDP on
+`232.1.2.3:9009`. If you are running Crusher with Docker, you will need to
 publish the port `9009` using `-p 9009:9009` and publish multicast packets with
 TTL of at least 2. This port can be customized, and you can also configure
-QuestDB to listen for `unicast`.
+Crusher to listen for `unicast`.
 
 ### Commit strategy
 

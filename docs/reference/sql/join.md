@@ -4,9 +4,9 @@ sidebar_label: JOIN
 description: JOIN SQL keyword reference documentation.
 ---
 
-QuestDB supports the following types of joins: `INNER`, `OUTER`, `CROSS`, `ASOF`
+Crusher supports the following types of joins: `INNER`, `OUTER`, `CROSS`, `ASOF`
 and `SPLICE`. `FULL` joins are not yet implemented and are on our roadmap. All
-supported join types can be combined in a single SQL statement; QuestDB SQL's
+supported join types can be combined in a single SQL statement; Crusher SQL's
 optimiser determines the best execution order and algorithms.
 
 There are no known limitations on size of tables or sub-queries participating in
@@ -20,7 +20,7 @@ Following data join columns from joined tables are combined in single row. Same
 name columns originating from different tables will be automatically aliased to
 create unique column namespace of the result set.
 
-Though it is a best practice to diligently specify join conditions, QuestDB will
+Though it is a best practice to diligently specify join conditions, Crusher will
 also analyse `WHERE` clause for implicit join condition and will derive
 transient join conditions where necessary.
 

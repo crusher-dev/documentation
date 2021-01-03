@@ -2,12 +2,12 @@
 title: SQL execution order
 sidebar_label: SQL execution order
 description:
-  Execution order for SQL clauses in QuestDB. This covers the SQL keywords you
-  are used to as well as QuestDB's extensions to the language.
+  Execution order for SQL clauses in Crusher. This covers the SQL keywords you
+  are used to as well as Crusher's extensions to the language.
 ---
 
-QuestDB attempts to implement standard ANSI SQL. We also attempt to be
-PostgreSQL compatible, although some of it is work in progress. QuestDB
+Crusher attempts to implement standard ANSI SQL. We also attempt to be
+PostgreSQL compatible, although some of it is work in progress. Crusher
 implements the following clauses in this execution order:
 
 1. [FROM](/docs/reference/sql/select/)

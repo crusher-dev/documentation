@@ -14,7 +14,7 @@ const CareerEmailUs = ({ title }: Props) => {
       <p className={styles.content}>
         Email us with &quot;{title}&quot; in the subject line. Attach any
         relevant links to your portfolio (LinkedIn, GitHub, personal website,
-        etc.) and a few words about why you are interested in QuestDB.
+        etc.) and a few words about why you are interested in Crusher.
       </p>
       <a className={styles.link} href="mailto:careers@questdb.io">
         careers@questdb.io

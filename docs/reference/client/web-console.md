@@ -3,7 +3,7 @@ title: Web Console
 description: Official Web Console reference documentation.
 ---
 
-The Web Console allows you to interact with QuestDB. It provides you with tools
+The Web Console allows you to interact with Crusher. It provides you with tools
 to query data and visualize it in a table or using graphs.
 
 <img

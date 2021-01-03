@@ -119,7 +119,7 @@ function Navbar(): JSX.Element {
             size="xsmall"
             to="/get-questdb/"
           >
-            Get QuestDB
+            Get Crusher
           </Button>
         </div>
       </div>

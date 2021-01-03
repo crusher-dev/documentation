@@ -1,14 +1,14 @@
 ---
-title: Build a monitoring dashboard with QuestDB and Grafana
+title: Build a monitoring dashboard with Crusher and Grafana
 author: Joan
-author_title: QuestDB Team
+author_title: Crusher Team
 author_url: https://github.com/jaugsburger
 author_image_url: https://avatars.githubusercontent.com/jaugsburger
 tags: [tutorial]
-description: How to use Grafana and QuestDB to build a monitoring dashboard.
+description: How to use Grafana and Crusher to build a monitoring dashboard.
 ---
 
-In this tutorial you will learn how to use QuestDB as a data source for your
+In this tutorial you will learn how to use Crusher as a data source for your
 Grafana dashboards and create visualizations using aggregate functions and
 sampling
 
@@ -27,7 +27,7 @@ in this tutorial:
 
 1. **Data source** - this is how you tell Grafana where your data is stored and
    how you want to access it. For the purposes of our tutorial, we will have a
-   QuestDB server running and we will access it via Postgres Wire using the
+   Crusher server running and we will access it via Postgres Wire using the
    PostgreSQL data source plugin.
 2. **Dashboard** - A group of widgets that are displayed together on the same
    screen.
@@ -44,7 +44,7 @@ docker run -p 3000:3000 grafana/grafana
 Once the Grafana server has started, you can access it via port 3000
 (http://locahost:3000).
 
-### Running QuestDB
+### Running Crusher
 
 ```shell
 docker run -p 8812:8812 questdb/questdb
@@ -81,7 +81,7 @@ user could run:
 
 `drop table x`
 
-To protect against this, you might want to run a dedicated QuestDB instance set
+To protect against this, you might want to run a dedicated Crusher instance set
 to read-only mode. You can do this by `http.security.readonly=true` in your
 `server.conf`. Please check the
 [configuration page](https://questdb.io/docs/reference/configuration).
@@ -186,7 +186,7 @@ You can find more information on
 There are also 2 key grafana functions used in the query above:
 
 `$__timeFilter(pickup_datetime)` This handy function tells Grafana to send the
-from and to time defined in the Dashboard to the QuestDB server. Grafana
+from and to time defined in the Dashboard to the Crusher server. Grafana
 translates this to:
 `pickup_datetime BETWEEN '2018-02-01T00:00:00Z' AND '2018-02-28T23:59:59Z'`.
 
@@ -269,5 +269,5 @@ series.
 ## Conclusion
 
 In summary, we have showed you how to visualize your data by harnessing the
-power of Grafana and QuestDB. For more information on QuestDB, please go to our
+power of Grafana and Crusher. For more information on Crusher, please go to our
 [documentation page](https://questdb.io/docs/introduction/).

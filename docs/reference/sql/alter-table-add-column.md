@@ -17,7 +17,7 @@ Adds a new single column of the specified type. The new column is not
 back-populated even if the table contains data.
 
 While a single column is added atomically, adding multiple columns is not an
-atomic operation. QuestDB will stop adding the remaining columns on the list on
+atomic operation. Crusher will stop adding the remaining columns on the list on
 the first failure. It is therefore possible to add some columns and not others.
 
 :::info

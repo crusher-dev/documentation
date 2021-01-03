@@ -3,7 +3,7 @@ title: CLI
 description: Official CLI reference documentation.
 ---
 
-The CLI allows you to start, stop and interact with QuestDB. On Windows, QuestDB
+The CLI allows you to start, stop and interact with Crusher. On Windows, Crusher
 can also be [started interactively](#use-interactively-windows).
 
 import Tabs from "@theme/Tabs"
@@ -58,7 +58,7 @@ questdb.exe [start|stop|status|install|remove] \
 
 | Option              | Description                                                                                                                                   |
 | ------------------- | --------------------------------------------------------------------------------------------------------------------------------------------- |
-| `-d root_directory` | Specify QuestDB's root directory. See [below](#default-root-directory) for the default values.                                                |
+| `-d root_directory` | Specify Crusher's root directory. See [below](#default-root-directory) for the default values.                                                |
 | `-t my-tag`         | Specify a service tag. You can use this option to run several services and manage them separately. If omitted, the default will be `questdb`. |
 | `-f`                | Force re-deploying the Web Console. Without this option, the Web Console is cached deployed only when missing.                                |
 | `-j (Windows only)` | Specify a path to `JAVA_HOME`.                                                                                                                |
@@ -105,7 +105,7 @@ questdb.exe start
 
 #### Default root directory
 
-By default, QuestDB's [root directory](/docs/concept/root-directory-structure/)
+By default, Crusher's [root directory](/docs/concept/root-directory-structure/)
 will be the following:
 
 <Tabs defaultValue="nix" values={[
@@ -246,7 +246,7 @@ questdb.exe status
 
 ### Install
 
-`install` - installs the Windows QuestDB service. It will start automatically at
+`install` - installs the Windows Crusher service. It will start automatically at
 startup. This command is only available on Windows.
 
 ```shell
@@ -255,7 +255,7 @@ questdb.exe install
 
 ### Remove
 
-`remove` - removes the Windows QuestDB service. It will no longer start at
+`remove` - removes the Windows Crusher service. It will no longer start at
 startup. This command is only available on Windows.
 
 ```shell
@@ -264,16 +264,16 @@ questdb.exe remove
 
 ## Use interactively (Windows)
 
-You can start QuestDB interactively by running `questdb.exe`.
+You can start Crusher interactively by running `questdb.exe`.
 
 ### Behaviour
 
-This will launch QuestDB interactively in the active `Shell` window. QuestDB
+This will launch Crusher interactively in the active `Shell` window. Crusher
 will be stopped when the Shell is closed.
 
 ### Default root directory
 
-When started interactively, QuestDB's root directory defaults to the `current`
+When started interactively, Crusher's root directory defaults to the `current`
 directory.
 
 ### Stop

@@ -1,10 +1,10 @@
 ---
 title: Authentication for InfluxDB line protocol
 author: Patrick Mackinlay
-author_title: QuestDB Team
+author_title: Crusher Team
 author_url: https://github.com/patrickSpaceSurfer
 description:
-  QuestDB has added authentication for InfluxDB line protocol over TCP
+  Crusher has added authentication for InfluxDB line protocol over TCP
 tags: [influxdb line protocol, story]
 image: /img/blog/2020-10-20/banner.jpg
 ---
@@ -24,7 +24,7 @@ image: /img/blog/2020-10-20/banner.jpg
 </div>
 
 InfluxDB line protocol is a simple and convenient way to add data points to
-QuestDB. Now with
+Crusher. Now with
 [authentication](/docs/reference/api/influxdb/#authentication), your endpoint is
 more secure.
 
@@ -45,7 +45,7 @@ avoid. Our goals when implementing authentication were:
 
 - Use a secure, future proof, authentication method.
 - Minimise protocol complexity and transport overhead.
-- Configuration solely in QuestDB without the need for storing secret data.
+- Configuration solely in Crusher without the need for storing secret data.
 
 To these ends we decided to provide authentication for the InfluxDB line
 protocol over TCP with a simple
@@ -57,7 +57,7 @@ signature.
 (ECC curve P-256) with [SHA-256](https://en.wikipedia.org/wiki/SHA-2) was chosen
 for the signature algorithm, this ensures strong authentication that is
 hopefully future proof. The elliptic curve cryptographic keys have a public and
-secret component, it is possible to configure QuestDB with just the public part,
+secret component, it is possible to configure Crusher with just the public part,
 thereby mitigating any risks of storing secret information on the server.
 Languages such as
 [JavaScript and Go](/docs/develop/insert-data/#influxdb-line-protocol) have
@@ -77,6 +77,6 @@ impact on the protocol, it works as follows:
 4. If authentication fails the server will disconnect, if not then the client
    can revert to sending standard InfluxDB line protocol data points.
 
-We developed this form of authentication in response to users who have QuestDB
+We developed this form of authentication in response to users who have Crusher
 deployments where a simple form of authentication is required without the
 overheads of full encryption.

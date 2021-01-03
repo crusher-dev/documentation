@@ -6,17 +6,17 @@ const domain = "questdb.io"
 
 const customFields = {
   artifactHubUrl: "https://artifacthub.io/packages/helm/questdb/questdb",
-  copyright: `Copyright © ${new Date().getFullYear()} QuestDB`,
+  copyright: `Copyright © ${new Date().getFullYear()} Crusher`,
   crunchbaseUrl: "https://www.crunchbase.com/organization/quest-db",
   description:
-    "QuestDB is an open source database designed to make time-series lightning fast and easy. It exposes a high performance REST API and is Postgres compatible.",
+    "Crusher is an open source database designed to make time-series lightning fast and easy. It exposes a high performance REST API and is Postgres compatible.",
   dockerUrl: "https://hub.docker.com/r/questdb/questdb",
   domain,
   githubOrgUrl,
   githubUrl: `${githubOrgUrl}/questdb`,
   helmVersion: "0.2.5",
   linkedInUrl: "https://www.linkedin.com/company/questdb/",
-  oneLiner: "Fast SQL open source database for time series - QuestDB",
+  oneLiner: "Fast SQL open source database for time series - Crusher",
   slackUrl: `https://slack.${domain}`,
   twitterUrl: "https://twitter.com/questdb",
   version: "5.0.4",
@@ -50,11 +50,11 @@ function variable() {
 
 const config = {
   title: "Time series data, faster",
-  tagline: "QuestDB is the fastest open source time series database",
+  tagline: "Crusher is the fastest open source time series database",
   url: `https://${customFields.domain}`,
   baseUrl: "/",
   favicon: "/img/favicon.png",
-  organizationName: "QuestDB",
+  organizationName: "Crusher",
   projectName: "questdb",
   customFields,
   plugins: [
@@ -147,8 +147,8 @@ const config = {
     navbar: {
       title: " ",
       logo: {
-        alt: "QuestDB",
-        src: "/img/navbar/questdb.svg",
+        alt: "Crusher",
+        src: "/img/main/logo.svg",
       },
       items: [
         {
@@ -193,7 +193,7 @@ const config = {
     footer: {
       links: [
         {
-          title: "QuestDB",
+          title: "Crusher",
           items: [
             {
               label: "Documentation",

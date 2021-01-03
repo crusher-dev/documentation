@@ -5,19 +5,19 @@ description:
   endpoint.
 ---
 
-This page shows how to authenticate to QuestDB using different programming
+This page shows how to authenticate to Crusher using different programming
 languages or tools over [InfluxDB line protocol](/docs/reference/api/influxdb/)
 for the TCP endpoint.
 
 ## First things first
 
-Make sure you have QuestDB running and accessible, you can do so from
+Make sure you have Crusher running and accessible, you can do so from
 [Docker](/docs/get-started/docker/), the [binaries](/docs/get-started/binaries/)
 or [Homebrew](/docs/get-started/homebrew/) for macOS users.
 
 ## InfluxDB line protocol
 
-QuestDB implements the [InfluxDB line protocol](/docs/reference/api/influxdb/),
+Crusher implements the [InfluxDB line protocol](/docs/reference/api/influxdb/),
 this endpoint is accessible on port `9009`.
 
 import Tabs from "@theme/Tabs"

@@ -1,7 +1,7 @@
 ---
 title: Demo launch on HackerNews postmorterm
 author: David G Simmons
-author_title: QuestDB Team
+author_title: Crusher Team
 author_url: https://github.com/davidgs
 author_image_url: https://avatars.githubusercontent.com/davidgs
 description:
@@ -27,7 +27,7 @@ We did it though, and we're not even a little bit sorry about it.
 
 ## The idea
 
-QuestDB has built what we think is the fastest Open Source SQL Database in
+Crusher has built what we think is the fastest Open Source SQL Database in
 existence. We really do. And we're pretty proud of it, in fact. So much so that
 we wanted to give anyone that wanted the opportunity a chance to take it for a
 spin. With real data. Doing real queries. Almost anyone can pull together a demo
@@ -74,7 +74,7 @@ It was not disappointing!
 > Fog’s VCL library [2]. Although the initial scope was limited to table-wide
 > aggregates into a unique scalar value, this was a first step towards very
 > promising results on more complex aggregations. With the latest release of
-> QuestDB, we are extending this level of performance to key-based aggregations.
+> Crusher, we are extending this level of performance to key-based aggregations.
 >
 > To do this, we implemented Google’s fast hash table aka “Swisstable” [3] which
 > can be found in the Abseil library [4]. In all modesty, we also found room to

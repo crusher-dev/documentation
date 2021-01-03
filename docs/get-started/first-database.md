@@ -5,9 +5,9 @@ description:
   series data.
 ---
 
-The goal of this guide is to explore QuestDB's features to interact with time
+The goal of this guide is to explore Crusher's features to interact with time
 series data. This assumes you have an instance running. You can find guides to
-setup QuestDB on the [introduction page](/docs/introduction/).
+setup Crusher on the [introduction page](/docs/introduction/).
 
 In this tutorial, you will learn how to
 

@@ -62,10 +62,10 @@ options.
 
 ![Flow chart showing the syntax of the different column types](/img/docs/diagrams/columnTypeDef.svg)
 
-- `distinctValueEstimate` - optionally you can hint QuestDB how many distinct
-  values this column is going to have. QuestDB will use this value to size data
+- `distinctValueEstimate` - optionally you can hint Crusher how many distinct
+  values this column is going to have. Crusher will use this value to size data
   structures used to support [symbol](/docs/concept/symbol/). These data
-  structures will resize themselves when necessary to allow QuestDB to function
+  structures will resize themselves when necessary to allow Crusher to function
   correctly. Under-estimating symbol value count might result in drop of
   performance whereas over-estimating - in higher disk space and memory
   consumption.
@@ -77,8 +77,8 @@ When `distinctValueEstimate` is not specified, a configuration default is used
 
 :::
 
-- `CACHE | NOCACHE` - a flag to tell QuestDB how to cache a
-  [symbol](/docs/concept/symbol/). `CACHE` means that QuestDB will use Java Heap
+- `CACHE | NOCACHE` - a flag to tell Crusher how to cache a
+  [symbol](/docs/concept/symbol/). `CACHE` means that Crusher will use Java Heap
   based Map to resolve symbol values and keys. When column has large number of
   distinct symbol values (over 100,000) heap impact might be significant and
   depending on heap size might cause OutOfMemory error. To avoid Java Heap
@@ -91,7 +91,7 @@ Default option is `CACHE`.
 
 :::
 
-- `inlineIndexDef` - when present, QuestDB will create and maintain
+- `inlineIndexDef` - when present, Crusher will create and maintain
   [index](/docs/concept/indexes/) for `symbol` column.
 
   ![Flow chart showing the syntax of the INDEX keyword](/img/docs/diagrams/inlineIndexDef.svg)
@@ -102,11 +102,11 @@ Default option is `CACHE`.
 
 - `valueBlockSize` - index storage parameter. This value is optional and will
   default to the value of [configuration key](/docs/reference/configuration/)
-  `cairo.index.value.block.size`. `valueBlockSize` tells QuestDB how many row
+  `cairo.index.value.block.size`. `valueBlockSize` tells Crusher how many row
   IDs to store in a single storage block on disk. Consider the following
   example. Your table has 200 unique stock symbols and 1,000,000,000 stock
   quotes over time. Index will have to store 1,000,000,000/200 row IDs for each
-  symbol, e.g. 5,000,000 per symbol. When `valueBlockSize` is 1,048,576 QuestDB
+  symbol, e.g. 5,000,000 per symbol. When `valueBlockSize` is 1,048,576 Crusher
   will use 5 blocks to store the row IDs, but when `valueBlockSize` is 1,024,
   block count will be 4,883. To attain better performance the fewer blocks are
   used to store row IDs the better. At the same time over-sizing
@@ -117,7 +117,7 @@ Default option is `CACHE`.
 
   ![Flow chart showing the syntax of the cast function](/img/docs/diagrams/castDef.svg)
 
-- `indexDef` - instructs QuestDB to create an index for one of table's columns.
+- `indexDef` - instructs Crusher to create an index for one of table's columns.
   This clause references column name to be indexed. The referenced column muse
   be of type `SYMBOL`
 
@@ -177,7 +177,7 @@ CREATE TABLE
 
 :::info
 
-With this setting, QuestDB enforce chronological order of `ts` values.
+With this setting, Crusher enforce chronological order of `ts` values.
 
 :::
 

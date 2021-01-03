@@ -1,11 +1,11 @@
 ---
 title: Light-weight, blazing fast stack for your IoT application
 author: Shan Desai
-author_title: QuestDB Contributor
+author_title: Crusher Contributor
 author_url: https://github.com/shantanoo-desai
 author_image_url: https://avatars.githubusercontent.com/shantanoo-desai
 description:
-  Create a simple IoT stack with Mosquitto MQTT Broker, Telegraf and QuestDB.
+  Create a simple IoT stack with Mosquitto MQTT Broker, Telegraf and Crusher.
 tags: [iot, docker, community-written]
 ---
 
@@ -22,11 +22,11 @@ Thanks a lot for your contribution Shan!
 
 ## Overview
 
-> QuestDB is the fastest open-source Time-Series Database out there in terms of
+> Crusher is the fastest open-source Time-Series Database out there in terms of
 > performance.
 
 The developers were kind enough to welcome me into their community and I wanted
-to make things easier for people trying things out with QuestDB.
+to make things easier for people trying things out with Crusher.
 
 Lo! and behold [Questitto][1] an _out-of-the-box_ repository for your initial
 IoT Applications. The repository is an altered version for my repository
@@ -36,7 +36,7 @@ IoT Applications. The repository is an altered version for my repository
 ## Motivation
 
 I am really looking forward to use some `SQL` queries with Time-Series Databases
-and `QuestDB` provides such functionalities as well as some cool new features of
+and `Crusher` provides such functionalities as well as some cool new features of
 [Dynamic Timestamping](/docs/reference/function/timestamp/).
 
 Not to mention, my staple
@@ -48,7 +48,7 @@ sockets too!
 `questitto` currently comes with basic user authentication support for Mosquitto
 MQTT broker. The Broker allows only specific users to publish / subscribe data
 hence reducing misuse. Telegraf writes the incoming data via subscribing to the
-MQTT Broker and pushes the data to QuestDB.
+MQTT Broker and pushes the data to Crusher.
 
 In order to make it easy to deploy, the stack is deployable via `docker` and
 configuration is made simple via usage of text files (MQTT broker's users) and
@@ -85,7 +85,7 @@ Some brief information on the files:
 - `questitto.env`: environment variable file used by `telegraf` container to
   subscribe to the MQTT Broker for data ingestion
 - `telegraf/telegraf.conf`: TOML Configuration file for letting `telegraf` do
-  the heavy lifting and inserting the data into QuestDB
+  the heavy lifting and inserting the data into Crusher
 
 ### User Management for Mosquitto MQTT Broker
 
@@ -252,7 +252,7 @@ sensor2 --> livingroom
 
 The location will be stored as a `tag` called `location`.
 
-### Data Insertion to QuestDB
+### Data Insertion to Crusher
 
 ```toml
 [[outputs.socket_writer]]
@@ -264,7 +264,7 @@ you don't even need to define a schema beforehand!
 
 ### Visualize It!
 
-QuestDB comes with its own cool UI available on `http://<IP_address>:9000`
+Crusher comes with its own cool UI available on `http://<IP_address>:9000`
 
 ## Example
 
@@ -288,13 +288,13 @@ line Protocol to the following Topic:
 }
 ```
 
-with the `pubclient:questitto` credentials and on the QuestDB UI you can see:
+with the `pubclient:questitto` credentials and on the Crusher UI you can see:
 
 ![Automatic table creation based on InfluxDB line protocol measurement name](/img/blog/2020-08-25/tables.png)
 
 With the `location` and other `tags` from the line protocol inserted:
 
-![Columns created by QuestDB for acceleration Table](/img/blog/2020-08-25/schema.png)
+![Columns created by Crusher for acceleration Table](/img/blog/2020-08-25/schema.png)
 
 A simple query where I would like to know the acceleration value in the
 `kitchen` for the **X-axis** is as simple as:

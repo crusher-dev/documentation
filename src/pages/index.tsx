@@ -45,7 +45,7 @@ const Why = () => {
             "text--center",
           )}
         >
-          Why QuestDB?
+          Why Crusher?
         </h2>
 
         <div className={whyStyles.why__footer}>
@@ -145,7 +145,7 @@ const SeenOn = () => (
     >
       <img
         src="https://api.producthunt.com/widgets/embed-image/v1/top-post-badge.svg?post_id=224674&theme=dark&period=daily"
-        alt="QuestDB - Fastest open source database for time-series and analytics | Product Hunt Embed"
+        alt="Crusher - Fastest open source database for time-series and analytics | Product Hunt Embed"
         width="250px"
         height="54px"
       />
@@ -419,7 +419,7 @@ const Console = () => {
         </p>
 
         <img
-          alt="Artistic view of QuestDB's Web Console split in 3 components: the navigation tree, the SQL code editor and data displayed as a chart"
+          alt="Artistic view of Crusher's Web Console split in 3 components: the navigation tree, the SQL code editor and data displayed as a chart"
           className={consoleStyles.console__illustration}
           src="/img/pages/index/console.svg"
         />
@@ -440,7 +440,7 @@ const Console = () => {
               Postgres compatibility
             </h3>
             <p className={consoleStyles.console__summary}>
-              Interact with QuestDB using the Postgres layer and any tool that
+              Interact with Crusher using the Postgres layer and any tool that
               connects to it.
             </p>
           </div>
@@ -453,7 +453,7 @@ const Console = () => {
             />
             <h3 className={consoleStyles.console__label}>Open source</h3>
             <p className={consoleStyles.console__summary}>
-              QuestDB is open source. Follow us on GitHub. Watch the repo to get
+              Crusher is open source. Follow us on GitHub. Watch the repo to get
               notified of further releases and new features!
             </p>
 
@@ -587,7 +587,7 @@ const QueryScroller = () => {
           "text--center",
         )}
       >
-        QuestDB enhances ANSI SQL with time series extensions to manipulate time
+        Crusher enhances ANSI SQL with time series extensions to manipulate time
         stamped data
       </p>
 
@@ -730,7 +730,7 @@ ${mergeQuery}`}
 
 const Home = () => {
   const { siteConfig } = useDocusaurusContext()
-  const title = "QuestDB"
+  const title = "Crusher"
 
   return (
     <MetadataContextProvider>

@@ -1,9 +1,9 @@
 ---
 title: Why performance matters in time-series data
 author: Nicolas Hourcard
-author_title: QuestDB Team
-author_url: https://github.com/NicQuestDB
-author_image_url: https://avatars.githubusercontent.com/NicQuestDB
+author_title: Crusher Team
+author_url: https://github.com/NicCrusher
+author_image_url: https://avatars.githubusercontent.com/NicCrusher
 description:
   Thoughts on why speed and performance are crucial to time-series databases
   ingestion and analysis.
@@ -32,7 +32,7 @@ within an enterprise goes unused for analytics, a huge missed opportunity to
 capture and process data effectively. That’s why a number of teams are working
 on competitive products to make data more useful.
 
-QuestDB is concerned with capturing time-series data in particular, which lets
+Crusher is concerned with capturing time-series data in particular, which lets
 us represent and understand change over time. Time-series data might pertain to
 changes to the weather, changes in a machine’s performance, or even changes in
 your own weight. But quite unlike weighing yourself once a day and storing those
@@ -103,6 +103,6 @@ new machine by using higher-performance software, then you have a really reduced
 cost for each machine. You furthermore end up needing fewer of them.
 
 Performance in time-series data is about helping you reach the best decision as
-effectively as possible. That’s why QuestDB is glad to be building
+effectively as possible. That’s why Crusher is glad to be building
 high-performance time-series data solutions that are significantly faster than
 the competition.

@@ -108,9 +108,9 @@ Binary.defaultProps = {
 }
 
 const GetQuestdbPage = () => {
-  const title = "Download QuestDB"
+  const title = "Download Crusher"
   const description =
-    "Download QuestDB, an open source time series SQL database for fast ingestion and queries"
+    "Download Crusher, an open source time series SQL database for fast ingestion and queries"
   const { siteConfig } = useDocusaurusContext()
   const { release } = usePluginData<{ release: Release }>("fetch-release")
   const [os, setOs] = useState<Os | undefined>()
@@ -258,7 +258,7 @@ brew install questdb`}
                 getQuestdbStyles.getQuestdb__title,
               )}
             >
-              Download QuestDB
+              Download Crusher
             </h1>
 
             <p
@@ -269,7 +269,7 @@ brew install questdb`}
               )}
             >
               You can find below download links for the latest version of
-              QuestDB ({siteConfig.customFields.version}). Once your download is
+              Crusher ({siteConfig.customFields.version}). Once your download is
               finished, you can check our documentation for{" "}
               <a href="/docs/get-started/docker/">Docker</a>, the{" "}
               <a href="/docs/get-started/binaries/">binaries</a> or{" "}
@@ -461,7 +461,7 @@ helm install questdb/questdb --version ${siteConfig.customFields.helmVersion}`}
               How does it work
             </h2>
             <p>
-              QuestDB is distributed as a single binary. You can download
+              Crusher is distributed as a single binary. You can download
               either:
             </p>
             <ul className={instructionStyles.instructions__list}>

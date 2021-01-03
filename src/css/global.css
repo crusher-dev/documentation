@@ -4,18 +4,27 @@
 *
 **/
 
+
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800;900&display=swap');
+
+body,html{
+  font-family: 'Raleway', sans-serif;
+}
+
 :root {
-  --palette-charade: #192125;
+  /* --palette-charade: #192125; */
+  --palette-charade: #13181a;
   --palette-gray: #32343e;
   --palette-green: #66bb6a;
   --palette-midnight: #141725;
   --palette-pale-blue: #b1b5d3;
   --palette-pink: #5B76F7;
+  --palette-turquoise: #ff51b3;
   --palette-pink-darker: #be2f5b;
   --palette-rock: rgb(var(--palette-rock-raw));
   --palette-rock-raw: 22, 30, 35;
   --palette-sky: #81d3f9;
-  --palette-turquoise: #0cc0df;
+
   --palette-white: #fff;
   --palette-white-03: rgba(255, 255, 255, 0.03);
   --palette-white-05: rgba(255, 255, 255, 0.05);
@@ -81,6 +90,10 @@
   --ifm-toc-border-color: var(--palette-white-10);
 }
 
+.announcement__content_src-theme-AnnouncementBar-{
+  background: #161c1e !important;
+}
+
 html[data-theme="dark"] {
   --ifm-background-color: var(--palette-charade);
   --ifm-color-emphasis-300: var(--palette-pale-blue);
@@ -123,6 +136,16 @@ html[data-theme="dark"] .DocSearch {
 nav {
   --ifm-font-size-base: var(--font-size-normal);
   --ifm-link-color: var(--palette-pink);
+}
+
+.prism-code > div,.code{
+
+  background: #12171a !important;
+}
+
+.codeBlockTitle_node_modules-\@docusaurus-theme-classic-lib-theme-CodeBlock-{
+  border-bottom-color: #182024;
+  background: #12171a !important;
 }
 
 .markdown {

@@ -3,7 +3,7 @@ title: Configuration
 description: Server configuration keys reference documentation.
 ---
 
-QuestDB's configuration can be set either:
+Crusher's configuration can be set either:
 
 - In the `server.conf` configuration file available in the
   [root directory](/docs/concept/root-directory-structure)
@@ -41,7 +41,7 @@ export QBD_SHARED_WORKER_COUNT=5
 
 :::note
 
-After changing the configuration, you will need to restart QuestDB in order for
+After changing the configuration, you will need to restart Crusher in order for
 your modifications to take effect
 
 :::
@@ -66,7 +66,7 @@ w.stdout.class=io.questdb.log.LogConsoleWriter
 w.stdout.level=INFO,ERROR
 ```
 
-QuestDB will look for `/qlog.conf` on the classpath unless this name is
+Crusher will look for `/qlog.conf` on the classpath unless this name is
 overridden via a "system" property: `-DquestdbLog=/something_else.conf`.
 
 ### Environment variables
@@ -83,7 +83,7 @@ export QDB_LOG_W_STDOUT_LEVEL=ERROR
 
 ### Debug
 
-QuestDB logging can be quickly forced globally to `DEBUG` via either providing
+Crusher logging can be quickly forced globally to `DEBUG` via either providing
 the java option `-Debug` or setting the environment variable `QDB_DEBUG=true`.
 
 ## Available keys and default values
@@ -260,10 +260,10 @@ the java option `-Debug` or setting the environment variable `QDB_DEBUG=true`.
 | line.udp.bind.to             | "0.0.0.0:9009" | IP address of the network interface to bind listener to and port. By default UDP receiver listens on all network interfaces.                                                                                                     |
 | line.udp.commit.rate         | 1000000        | For packet bursts the number of continuously received messages after which receiver will force commit. Receiver will commit irrespective of this parameter when there are no messages.                                           |
 | line.udp.msg.buffer.size     | 2048           | Buffer used to receive single message. This value should be roughly equal to your MTU size.                                                                                                                                      |
-| line.udp.msg.count           | 10000          | Only for Linux. On Linix QuestDB will use recvmmsg(). This is the max number of messages to receive at once.                                                                                                                     |
+| line.udp.msg.count           | 10000          | Only for Linux. On Linix Crusher will use recvmmsg(). This is the max number of messages to receive at once.                                                                                                                     |
 | line.udp.receive.buffer.size | 8388608        | UDP socket buffer size. Larger size of the buffer will help reduce message loss during bursts.                                                                                                                                   |
 | line.udp.enabled             | true           | Flag to enable or disable UDP receiver.                                                                                                                                                                                          |
-| line.udp.own.thread          | false          | When "true" UDP receiver will use its own thread and busy spin that for performance reasons. "false" makes receiver use worker threads that do everything else in QuestDB.                                                       |
+| line.udp.own.thread          | false          | When "true" UDP receiver will use its own thread and busy spin that for performance reasons. "false" makes receiver use worker threads that do everything else in Crusher.                                                       |
 | line.udp.own.thread.affinity | -1             | -1 does not set thread affinity. OS will schedule thread and it will be liable to run on random cores and jump between the. 0 or higher pins thread to give core. This property is only valid when UDP receiver uses own thread. |
 | line.udp.unicast             | false          | When true, UDP will me unicast. Otherwise multicast.                                                                                                                                                                             |
 | line.udp.timestamp           | n              | Input timestamp resolution. Possible values are `n`, `u`, `ms`, `s` and `h`.                                                                                                                                                     |
@@ -297,13 +297,13 @@ the java option `-Debug` or setting the environment variable `QDB_DEBUG=true`.
 | Property                                  | Default | Description                                                                                                                                              |
 | ----------------------------------------- | ------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | line.tcp.n.updates.per.load.balance       | 10000   | Maximum number of updates in a given table since the last load balancing before triggering a new load balancing job.                                     |
-| line.tcp.max.load.ratio                   | 1.9     | Maximum load ratio (max loaded worker/min loaded worker) before QuestDB will attempt to rebalance the load between the writer workers.                   |
+| line.tcp.max.load.ratio                   | 1.9     | Maximum load ratio (max loaded worker/min loaded worker) before Crusher will attempt to rebalance the load between the writer workers.                   |
 | line.tcp.max.uncommitted.rows             | 1000    | Maximum number of uncommitted rows, note that rows will always be committed if they have been received line.tcp.maintenance.job.hysteresis.in.ms ms ago. |
 | line.tcp.maintenance.job.hysteresis.in.ms | 1000    | Maximum amount of time in between maintenance jobs, these will commit any uncommited data.                                                               |
 
 ### Telemetry
 
-QuestDB sends telemetry data with information about usage which helps us improve
+Crusher sends telemetry data with information about usage which helps us improve
 the product over time. We do not collect any personally-identifying information,
 and we do not share any of this data with third parties.
 

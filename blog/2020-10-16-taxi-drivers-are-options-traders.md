@@ -1,7 +1,7 @@
 ---
 title: NYC taxi meter and options pricing
 author: Tancrede Collard
-author_title: QuestDB Team
+author_title: Crusher Team
 author_url: https://github.com/TheTanc
 author_image_url: https://avatars.githubusercontent.com/TheTanc
 tags: [deep-dive, story]
@@ -35,13 +35,13 @@ analogy with stock options trading. Interestingly, this approach allows us to
 show that drivers have progressively been worse-off, independently of
 competition from Uber.
 
-In order to do so, we have loaded a dataset into our database QuestDB. This
+In order to do so, we have loaded a dataset into our database Crusher. This
 dataset includes over 1.6 billion taxi rides, 700 million FHV rides (Uber, Lyft
 etc), and 10 years of weather and gas prices data.
 
 <!--truncate-->
 
-A few of months ago, I was putting together data for QuestDB's demo that we
+A few of months ago, I was putting together data for Crusher's demo that we
 shared on [ShowHN](https://news.ycombinator.com/item?id=23616878).
 
 It has been a while since I left derivatives trading, and was not expecting to
@@ -255,7 +255,7 @@ much the delta (first order greek) of an option changes when volatility changes.
 Let’s first look at the average speed over time.
 
 The NYC taxi dataset gives us the distance calculated by the meter, the pickup
-timestamp, and the drop-off timestamp. Using QuestDB, we can derive the duration
+timestamp, and the drop-off timestamp. Using Crusher, we can derive the duration
 of each ride as the difference between the two timestamps and divide the
 distance by the duration, to calculate the average speed.
 
@@ -391,13 +391,13 @@ customer for as long as possible. In the end, $30 per hour is better than 0.
 ## Your turn to explore the data
 
 We made this dataset and the database available online and you can query it
-directly from your browser via [QuestDB demo](http://try.questdb.io:9000/).
+directly from your browser via [Crusher demo](http://try.questdb.io:9000/).
 
 Feel free to explore it, come up with more analysis, and let me know your
 findings.
 
 I am particularly interested in expanding these results based on weather data. I
-let readers give it a try using the hourly data available on the QuestDB demo
+let readers give it a try using the hourly data available on the Crusher demo
 server. In his
 [analysis](https://toddwschneider.com/posts/analyzing-1-1-billion-nyc-taxi-and-uber-trips-with-a-vengeance/#taxi-weather),
 Todd W Schneider concluded that the rain had no significant impact on the number

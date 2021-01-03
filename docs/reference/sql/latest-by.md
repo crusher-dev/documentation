@@ -7,12 +7,12 @@ description: LATEST BY SQL keyword reference documentation.
 `LATEST BY` finds the latest entry by timestamp for a given key or combination
 of keys as part of a [SELECT statement](/docs/reference/sql/select/).
 
-To find the latest values, QuestDB will search time series from the newest
+To find the latest values, Crusher will search time series from the newest
 values to the oldest.
 
-- For single SYMBOL columns, QuestDB will know all distinct values upfront and
+- For single SYMBOL columns, Crusher will know all distinct values upfront and
   stop once the latest entry has been found for each symbol value.
-- For other field types, or multiple fields, QuestDB will scan the entire time
+- For other field types, or multiple fields, Crusher will scan the entire time
   series. Although scan is very fast this means the performance will degrade on
   hundreds of millions of records for non-symbol keys.
 
@@ -29,7 +29,7 @@ more in the [designated timestamp](/docs/concept/designated-timestamp/) section.
 
 :::note
 
-By default, QuestDB executes `where` clauses before `latest by`. To execute
+By default, Crusher executes `where` clauses before `latest by`. To execute
 `where` after `latest by`, you need to use sub-queries using brackets. You can
 learn how to do this in the [examples](#execution-order).
 

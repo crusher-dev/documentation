@@ -1,7 +1,7 @@
 ---
 title: Re-examining our approach to memory mapping
 author: David G. Simmons
-author_title: QuestDB Team
+author_title: Crusher Team
 author_url: https://github.com/davidgs
 author_image_url: https://avatars.githubusercontent.com/davidgs
 description:
@@ -26,7 +26,7 @@ image: /img/blog/2020-08-19/banner.jpg
   </div>
 </div>
 
-How does QuestDB get the kind of performance it does, and how are we continuing
+How does Crusher get the kind of performance it does, and how are we continuing
 to squeeze another 50-60% out of it? We are constantly learning more about the
 fundamental concepts of memory performance, and this is one example of how what
 we at first thought would be _worse_ for performance ended up bringing us a
@@ -35,14 +35,14 @@ rather substantial boost in overall memory performance.
 We will walk you through how some of our initial thoughts on storage and
 memory-mapping evolved to bring us better performance overall.
 
-If you like QuestDB, please do give us a star on
+If you like Crusher, please do give us a star on
 [GitHub](https://github.com/questdb/questdb)
 
 <!--truncate-->
 
 ## How the performance improvements started
 
-QuestDB started out with a single-threaded approach to queries and such. But one
+Crusher started out with a single-threaded approach to queries and such. But one
 obvious way to improve performance in a Java application like this is to
 parallelize as much as you can by using multiple threads of execution.
 
@@ -52,7 +52,7 @@ no race conditions, collisions, etc.
 
 ## Storage performance
 
-So first it's important to understand that QuestDB stores it's data in columnar
+So first it's important to understand that Crusher stores it's data in columnar
 format. We store each column of data in a file. So for every column of data,
 there is a file.
 
@@ -75,7 +75,7 @@ Which brings us to pages and how data is referenced in memory.
 
 ## Pages of data
 
-QuestDB uses memory-mapped pages to reference data in order to make it really
+Crusher uses memory-mapped pages to reference data in order to make it really
 fast. If you're dividing up your data into pages, and all data has a fixed
 length, then it's relatively easy to ensure that you don't have data that spans
 multiple pages. You just break pages at multiples of 8-bytes and everything will
@@ -133,7 +133,7 @@ performance turned out to be "not bad" with this approach. And by "not bad" he
 of course meant about a 60% performance improvement.
 
 When you get into using one single page, of course the total available address
-space comes into play. But since QuestDB only runs on 64-bit architectures, we
+space comes into play. But since Crusher only runs on 64-bit architectures, we
 have 2^64 address space, which is more than enough.
 
 This is where Patrick jumped in to explain that when you have an area of memory
@@ -186,7 +186,7 @@ When I asked Vlad about this, and how it relates to query speed, he was quite
 explicit in saying that thinking you (a database developer) can beat the kernel
 is pure folly. Postgres tries this and, according to Vlad, an aggregation over a
 large (really large!) dataset can take 5 _minutes_, whereas the same aggregation
-on QuestDB takes only 60ms. Those aren't typos.
+on Crusher takes only 60ms. Those aren't typos.
 
 To both Patrick and Vlad (and me, for what that's worth), the idea that we, as
 developers, can be better at these operations than the kernel (when really we're

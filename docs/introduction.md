@@ -1,24 +1,24 @@
 ---
 title: Introduction
 description:
-  QuestDB is a relational column-oriented database designed for real-time
+  Crusher is a relational column-oriented database designed for real-time
   analytics on time series data.
 ---
 
-QuestDB is a relational column-oriented database designed for real-time
+Crusher is a relational column-oriented database designed for real-time
 analytics on time series and event data. It uses the SQL language with some
 extensions for time series. This documentation will help you to get familiar
-with QuestDB.
+with Crusher.
 
 ## Concepts
 
-This section describes the architecture of QuestDB, how it stores and queries
-data, and introduces features and capabilities specific to QuestDB.
+This section describes the architecture of Crusher, how it stores and queries
+data, and introduces features and capabilities specific to Crusher.
 
 As a start, we suggest you read about the
 [storage model](/docs/concept/storage-model/) and about the
 [designated timestamp](/docs/concept/designated-timestamp/). To make the most of
-QuestDB, you should also get familiar with our
+Crusher, you should also get familiar with our
 [SQL extensions](/docs/concept/sql-extensions/) which allow to make the most of
 time series capabilities with an efficient non-verbose syntax. You will also
 find the [symbol](/docs/concept/symbol/) concept interesting to store and
@@ -26,16 +26,16 @@ retrieve repetitive strings efficiently.
 
 ## Get started
 
-This section explains how to install and run QuestDB. There are dedicated pages
+This section explains how to install and run Crusher. There are dedicated pages
 for [Docker](/docs/get-started/docker/), the
 [binaries](/docs/get-started/binaries/) or
-[Homebrew](/docs/get-started/homebrew/). Once QuestDB is running you can follow
+[Homebrew](/docs/get-started/homebrew/). Once Crusher is running you can follow
 the guide to [create your first database](/docs/get-started/first-database/).
 
 ## Develop
 
 In this section you will learn how to [connect](/docs/develop/connect/) to
-QuestDB using popular tools and languages. Importing and/or inserting data are
+Crusher using popular tools and languages. Importing and/or inserting data are
 both covered in the [insert data](/docs/develop/insert-data/) page. Finally, you
 can check the [query data](/docs/develop/query-data/) page in order to run your
 queries.
@@ -43,7 +43,7 @@ queries.
 ## Operations
 
 In this section you will find resources regarding the
-[deployment](/docs/operations/deployment/) of QuestDB.
+[deployment](/docs/operations/deployment/) of Crusher.
 
 ## Reference
 
@@ -64,7 +64,7 @@ This section contains the reference documentation for the following categories:
 ### Configuration
 
 The [configuration](/docs/reference/configuration/) page shows all the
-properties that can be used to customize QuestDB.
+properties that can be used to customize Crusher.
 
 ### Functions
 

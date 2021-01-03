@@ -1,20 +1,20 @@
 ---
-title: Get started with QuestDB from the binaries
+title: Get started with Crusher from the binaries
 sidebar_label: Binaries
 description:
-  Guide showing how to use the binaries to install and launch QuestDB. The
-  binaries can be download from our Get QuestDB page.
+  Guide showing how to use the binaries to install and launch Crusher. The
+  binaries can be download from our Get Crusher page.
 ---
 
-This guide shows how to install and use QuestDB from the binaries.
+This guide shows how to install and use Crusher from the binaries.
 
-QuestDB comes with a script `questdb.sh` for Linux/FreeBSD and an executable
+Crusher comes with a script `questdb.sh` for Linux/FreeBSD and an executable
 `questdb.exe` for Windows. If you are looking for macOS, please check our
 [Homebrew](/docs/get-started/homebrew/) section.
 
 ## Download
 
-You can find the latest binaries on the [Get QuestDB](/get-questdb/) page. The
+You can find the latest binaries on the [Get Crusher](/get-questdb/) page. The
 release notes are on our [GitHub release]({@githubUrl@}/releases) page.
 
 ## Prerequisites
@@ -104,7 +104,7 @@ questdb-{@version@}-rt-windows-amd64.tar.gz
 This binary weights around 20MB, this depends on your operating system.
 
 When using this binary, you do not need anything on your machine, the Java
-runtime is packaged directly with QuestDB.
+runtime is packaged directly with Crusher.
 
 ## Extract the tarball
 
@@ -161,5 +161,5 @@ tar -xvf questdb-{@version@}-rt-windows-amd64.tar.gz
 
 ## Next steps
 
-Once you extracted the tarball, you are ready to use QuestDB. Navigate to our
+Once you extracted the tarball, you are ready to use Crusher. Navigate to our
 [CLI](/docs/reference/client/cli/) page to learn more about its usage.

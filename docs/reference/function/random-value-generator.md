@@ -7,7 +7,7 @@ description: Random value generator function reference documentation.
 ## Overview
 
 The following functions have been created to help with our test suite. They are
-also useful for users testing QuestDB on specific workloads in order to quickly
+also useful for users testing Crusher on specific workloads in order to quickly
 generate large test datasets that mimic the structure of their actual data.
 
 Values can be generated either:
@@ -16,7 +16,7 @@ Values can be generated either:
 - [Deterministically](/docs/reference/function/row-generator/#long_sequence)
   when specifying a `seed`
 
-QuestDB supports the following random generation functions:
+Crusher supports the following random generation functions:
 
 - [rnd_boolean](#rnd_boolean)
 - [rnd_byte](#rnd_byte)

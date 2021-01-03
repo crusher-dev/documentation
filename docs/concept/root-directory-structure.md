@@ -4,7 +4,7 @@ sidebar_label: Root directory
 description: Contents of the <root_directory> folder explained.
 ---
 
-QuestDB creates the following file structure in it's `root_directory`:
+Crusher creates the following file structure in it's `root_directory`:
 
 ```filestructure
 questdb
@@ -16,7 +16,7 @@ questdb
 
 ## `conf` directory
 
-Contains configuration files for QuestDB:
+Contains configuration files for Crusher:
 
 ```filestructure
 ├── conf
@@ -98,7 +98,7 @@ for this effect.
 
 ## `log` directory
 
-Contains the log files for QuestDB:
+Contains the log files for Crusher:
 
 ```filestructure
 ├── log

@@ -27,9 +27,9 @@ cairo.sql.backup.root=/Users/UserName/Desktop
 ```
 
 The `backup directory` can be on a local disk to the server, on a remote disk,
-or a remote filesystem. QuestDB will enforce that the backup are only written in
+or a remote filesystem. Crusher will enforce that the backup are only written in
 a location relative to the `backup directory`. This is a security feature to
-disallow random file access by QuestDB.
+disallow random file access by Crusher.
 
 The tables will be written in a directory with today's date. By default, the
 format is `yyyy-MM-dd`, for example `2020-04-20`.

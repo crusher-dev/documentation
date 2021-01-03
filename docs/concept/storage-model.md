@@ -2,18 +2,18 @@
 title: Storage model
 sidebar_label: Storage model
 description:
-  Overview of QuestDB's column-based storage model. It ensures ACID properties
+  Overview of Crusher's column-based storage model. It ensures ACID properties
   while keeping low overhead for maximum performance.
 ---
 
-QuestDB uses a **column-based** storage model. Data is stored in tables with
+Crusher uses a **column-based** storage model. Data is stored in tables with
 each column stored in its own file and its own native format. New data is
 appended to the bottom of each column to allow data to be organically retrieved
 in the same order that it was ingested.
 
 ## Append model
 
-QuestDB appends one column at a time and each one is updated using the same
+Crusher appends one column at a time and each one is updated using the same
 method. The tail of column file is mapped into the memory page in RAM and the
 column append is effectively a memory write at an address. Once the memory page
 is exhausted it is unmapped (thus writing data to disk) and a new page is
@@ -42,10 +42,10 @@ mapped memory page, where the required value is read from.
 
 ## ACID properties
 
-QuestDB utilizes
+Crusher utilizes
 [ACID properties](<https://en.wikipedia.org/wiki/Atomicity_(database_systems)>)
 (Atomicity, Consistency, Isolation, Durability) to ensure data integrity during
-a transaction. **QuestDB’s transaction size is only limited by the available
+a transaction. **Crusher’s transaction size is only limited by the available
 disk space.**
 
 To guarantee **atomicity**, each table maintains a `last_committed_record_count`
@@ -54,11 +54,11 @@ than `tx_count`. This enables the **isolation** property: where uncommitted data
 cannot be read. Since uncommitted data is appended directly to the table, the
 transaction size is only limited by the available disk space.
 
-Once all data is appended, QuestDB `commit()` ensures that the `tx_count` is
+Once all data is appended, Crusher `commit()` ensures that the `tx_count` is
 updated atomically both in multi-threaded and multi-process environments. It
 does so `lock-free` to ensure minimal impact on concurrent reads.
 
-The **consistency** assurance of the data stored is limited to QuestDB
+The **consistency** assurance of the data stored is limited to Crusher
 auto-repairing abnormally terminated transactions. We do not yet support
 user-defined constraints, checks and triggers.
 
@@ -73,10 +73,10 @@ invoke msync() with a choice of synchronous or asynchronous IO.
 
 ## Summary
 
-The QuestDB storage model uses memory mapped files and cross-process atomic
+The Crusher storage model uses memory mapped files and cross-process atomic
 transaction updates as a low overhead method of inter-process communication.
 Data committed by one process can be instantaneously read by another process
-either randomly (via queries) or incrementally (as data queue). QuestDB provides
+either randomly (via queries) or incrementally (as data queue). Crusher provides
 a variety of reader implementations.
 
 <img

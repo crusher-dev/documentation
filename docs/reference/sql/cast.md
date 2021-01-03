@@ -64,7 +64,7 @@ cast(2334444.323 AS SHORT);
 | ---- | ----- | ------ |
 | 5    | 25663 | -24852 |
 
-When casting numbers into a smaller data type, QuestDB will truncate the higher
+When casting numbers into a smaller data type, Crusher will truncate the higher
 bits of this number.
 
 ## Implicit conversion
@@ -75,17 +75,17 @@ Type casting may be necessary in certain context such as
 - Inserting values where the originating type is different from the destination
   column type.
 
-QuestDB will attempt to convert to the data type required by the context. This
+Crusher will attempt to convert to the data type required by the context. This
 is called `implicit cast` and does not require using the `cast()` function.
 
 :::note
 
-QuestDB will only perform implicit cast when they would not result in data being
+Crusher will only perform implicit cast when they would not result in data being
 truncated or precision being lost.
 
 :::
 
-The below chart illustrates the explicit and implicit cast available in QuestDB.
+The below chart illustrates the explicit and implicit cast available in Crusher.
 
 ![Table showing the different possibilities the cast function supports, those are defined by an input and output types](/img/docs/castmap.jpg)
 
@@ -108,7 +108,7 @@ to_timestamp('2019-10-17T00:00:00', 'yyyy-MM-ddTHH:mm:ss') + 0.323;
 | ---- | -------- | --------------------------- | ---------------- |
 | 1801 | 1234.567 | 2019-10-17T00:00:00.000323Z | 1571270400000000 |
 
-When inserting into a table, QuestDB will cast data implicitly to match the type
+When inserting into a table, Crusher will cast data implicitly to match the type
 of the destination column.
 
 ```questdb-sql title="Example"
@@ -119,7 +119,7 @@ CREATE TABLE my_table(my_number long);
 -- but that we are trying to insert into a long type column:
 INSERT INTO my_table values((to_timestamp('2019-10-17T00:00:00', 'yyyy-MM-ddTHH:mm:ss'));
 
--- As timestamp can be converted to long without loss, QuestDB performs an implicit
+-- As timestamp can be converted to long without loss, Crusher performs an implicit
 -- cast on the value before inserting it. Therefore the value is now stored as a long:
 SELECT * FROM my_table;
 ```
@@ -129,7 +129,7 @@ SELECT * FROM my_table;
 | 1571270400000000 |
 
 The above insert would have been equivalent to running with explicit cast, but
-QuestDB took care of this step automatically.
+Crusher took care of this step automatically.
 
 ```questdb-sql title="Example"
 INSERT INTO my_table values

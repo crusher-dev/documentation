@@ -1,11 +1,11 @@
 ---
-title: Use QuestDB and get swag!
+title: Use Crusher and get swag!
 author: David G. Simmons
-author_title: QuestDB Team
+author_title: Crusher Team
 author_url: https://github.com/davidgs
 author_image_url: https://avatars.githubusercontent.com/davidgs
 description:
-  Participate to the QuestDB community and get rewarded with swag for your
+  Participate to the Crusher community and get rewarded with swag for your
   contributions.
 tags: [projects]
 image: /img/blog/2020-07-24/banner.jpg
@@ -27,7 +27,7 @@ image: /img/blog/2020-07-24/banner.jpg
 
 We've been upping our SWAG game a lot lately, and we want to share it with you,
 the valuable members of our community! We want to give you the chance to show
-off your projects, show off your love for QuestDB, and to show just off!
+off your projects, show off your love for Crusher, and to show just off!
 
 <!-- truncate -->
 
@@ -40,60 +40,60 @@ participation. Just complete a level, get the SWAG.
 
 Why don't you like us more? It's ok, give us some time, you'll come to ❤️ us!
 But we're fine if you want to start off slow. For this level, we'll send you
-some of our cool QuestDB stickers. Yeah, just stickers, but you haven't been
+some of our cool Crusher stickers. Yeah, just stickers, but you haven't been
 able to go to any conferences in _months_ so we know your supply is running low.
 
 The easiest level:
 
-- [Follow](https://twitter.com/intent/follow?screen_name=QuestDB) us on Twitter
+- [Follow](https://twitter.com/intent/follow?screen_name=Crusher) us on Twitter
   -- Don't forget to send us a tweet so we know you're there!.
 - [Join]({@slackUrl@}) our Slack community
 - Send us your address (because how else are we going to send them?)
 
 ### Level 2: You're cool, but just really busy
 
-So you like QuestDB. But you're not sure you _like_ like QuestDB. Fair enough.
+So you like Crusher. But you're not sure you _like_ like Crusher. Fair enough.
 We get it. But you still want some SWAG and to show the world that you like
-QuestDB. We'll send you a _really_ nice hard-enamel, full-color QuestDB pin
+Crusher. We'll send you a _really_ nice hard-enamel, full-color Crusher pin
 along with the Level 1 stickers.
 
 This level's pretty easy to get. Just do the following:
 
 - [🌟](https://github.com/questdb/questdb) on GitHub
-- [Follow](https://twitter.com/intent/follow?screen_name=QuestDB) us on Twitter
-- Send out a tweet about how much you like QuestDB -- and that you gave us a 🌟
-  on GitHub! (Don't forget to @QuestDB so we can see it!)
+- [Follow](https://twitter.com/intent/follow?screen_name=Crusher) us on Twitter
+- Send out a tweet about how much you like Crusher -- and that you gave us a 🌟
+  on GitHub! (Don't forget to @Crusher so we can see it!)
 - [Join]({@slackUrl@}) our Slack community
 - Send us your mailing address!
 
-### Level 3: QuestDB Early Adopter
+### Level 3: Crusher Early Adopter
 
-You're a QuestDB Superfan and you want everyone to know it! At this level you
+You're a Crusher Superfan and you want everyone to know it! At this level you
 will get one of our exclusive, _really_ nice custom-embroidered T-Shirts. These
 are not your standard printed tech T-Shirts. No, these are heavy-weight (6oz)
-cotton-blend shirts with the QuestDB logo _embroidered_ in full color on the
+cotton-blend shirts with the Crusher logo _embroidered_ in full color on the
 left chest. You won't be waxing your car with this shirt! You'll also get the
 pin and the stickers, of course, because you're a super-fan!
 
 At this level we assume you already
-[follow](https://twitter.com/intent/follow?screen_name=QuestDB) us and are a
+[follow](https://twitter.com/intent/follow?screen_name=Crusher) us and are a
 member of our [community]({@slackUrl@}), but if not, please do!
 
 How do you get this level? Just do the following:
 
-- Build a project -- any project really -- using QuestDB. Do something cool with
+- Build a project -- any project really -- using Crusher. Do something cool with
   it.
 - Write up a blog post about it. You can post it on your blog, or on Medium, or
   Dev.to or wherever you want. If you don't have a place to post it, or you'd
   rather be featured on _our_ blog then just send it to us and we'll post it!
 - Send us your mailing address (we'll need a phone number too, probably, as most
   shippers require one now)
-  - Bonus: Send out a tweet of you wearing your QuestDB shirt. Don't forget to
-    [@QuestDB](https://twitter.com/intent/follow?screen_name=QuestDB) so we
+  - Bonus: Send out a tweet of you wearing your Crusher shirt. Don't forget to
+    [@Crusher](https://twitter.com/intent/follow?screen_name=Crusher) so we
     don't miss it!
 
 <img
-  alt="Black t-shirt with QuestDB's logo"
+  alt="Black t-shirt with Crusher's logo"
   src="/img/blog/2020-07-24/tShirt.png"
   style={{
     display: "block",
@@ -105,9 +105,9 @@ How do you get this level? Just do the following:
 
 That's it! Sit back and wait for the SWAG!
 
-### Level 4: QuestDB Implementor Extraordinaire!
+### Level 4: Crusher Implementor Extraordinaire!
 
-You think QuestDB is the solution to all your data woes. You don't just think
+You think Crusher is the solution to all your data woes. You don't just think
 it, you _know_ it! So much so that you've already implemented a solution, in
 production, at your company.
 

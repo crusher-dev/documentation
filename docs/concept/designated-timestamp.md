@@ -6,8 +6,8 @@ description:
   functionality for time-series.
 ---
 
-QuestDB offers the option to elect a column as `designated timestamp`. This
-allows you to leverage the high-performance time series functions of QuestDB,
+Crusher offers the option to elect a column as `designated timestamp`. This
+allows you to leverage the high-performance time series functions of Crusher,
 but introduces a constraint on the column in question that will reject
 out-of-order inserts.
 

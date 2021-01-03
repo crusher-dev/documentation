@@ -1,7 +1,7 @@
 ---
 title: Aggregating billions of rows per sec with SIMD
 author: Tancrede Collard
-author_title: QuestDB Team
+author_title: Crusher Team
 author_url: https://github.com/TheTanc
 author_image_url: https://avatars.githubusercontent.com/TheTanc
 tags: [performance, simd]
@@ -11,7 +11,7 @@ description:
 ---
 
 <img
-  alt="QuestDB release 4.2 banner"
+  alt="Crusher release 4.2 banner"
   className="banner"
   src="/img/blog/2020-04-02/banner.png"
 />
@@ -27,8 +27,8 @@ CPU instruction. In practice, if you were to add 8 numbers together, SIMD does
 that in 1 operation instead of 8. We get compounded performance improvements by
 combining SIMD with actual parallelisation and spanning the work across CPUs.
 
-QuestDB 4.2 introduces SIMD instructions, which made our aggregations faster by
-100x! QuestDB is available open source (Apache 2.0) . If you like what we do,
+Crusher 4.2 introduces SIMD instructions, which made our aggregations faster by
+100x! Crusher is available open source (Apache 2.0) . If you like what we do,
 please consider [starring our repo]({@githubUrl@}) following us on GitHub and
 starring our project.
 
@@ -63,7 +63,7 @@ were running on 4 threads.
 ![AMD 3900X benchmark](/img/blog/2020-04-02/benchmark3900x.png)
 
 The dataset producing the results shown above does not contain NULL values.
-Interestingly, when introducing nulls, QuestDB sum() query time is unchanged.
+Interestingly, when introducing nulls, Crusher sum() query time is unchanged.
 This can be tested by creating the table as follows.
 
 | Test                            | Query                                                                                                  |
@@ -79,10 +79,10 @@ there is scope left to make our implementation faster in the future.
 ## Perspectives on performance
 
 The execution times outlined above become more interesting once put into
-context. This is how QuestDB compares to Postgres when doing a sum of 1 billion
+context. This is how Crusher compares to Postgres when doing a sum of 1 billion
 numbers from a given table `select sum(d) from 1G_double_nonNull`.
 
-![Benchmark results for QuestDB vs PostgreSQL](/img/blog/2020-04-02/benchmarkPostgres.png)
+![Benchmark results for Crusher vs PostgreSQL](/img/blog/2020-04-02/benchmarkPostgres.png)
 
 We found that our performance figures are constrained by the available memory
 channels. Both the 8850H and the 3900X have 2 memory channels, and throwing more
@@ -108,7 +108,7 @@ more cores.
 Interestingly, the 2-channel 3900X, is much faster on 1 core than the 8275CL.
 But it does not scale well and hits a performance ceiling at 4 cores. This is
 because it only has 2 memory channels that are already saturated. The 6-channel
-8275CL allows QuestDB to scale almost linearly as we add more CPU cores and hits
+8275CL allows Crusher to scale almost linearly as we add more CPU cores and hits
 a performance ceiling at around 12 cores.
 
 Unfortunately AWS CPUs are hyperthreaded. We could unpack even more performance
@@ -116,22 +116,22 @@ if CPU were fully isolated to run the computations.
 
 We did not get our hands on CPUs with more memory channels for this test, but if
 you have easy access to 8 or 12-channel servers and would like to benchmark
-QuestDB, we'd love to hear the results. You can
-[download QuestDB](/docs/introduction/) and leave a
+Crusher, we'd love to hear the results. You can
+[download Crusher](/docs/introduction/) and leave a
 [comment on github]({@githubUrl@}/issues/146).
 
 ## What is next?
 
 In further releases, we will roll out this functionality to other parts of our
-SQL implementation. QuestDB implements SIMD in a generic fashion, which will
+SQL implementation. Crusher implements SIMD in a generic fashion, which will
 allow us to continue adding SIMD to about everything our SQL engine does, such
-as keyed aggregations, indexing etc. We will also keep improving QuestDB's
+as keyed aggregations, indexing etc. We will also keep improving Crusher's
 performance. Through some further work on assembly, we estimate that we can gain
 another 15% speed on these operations. In the meantime, if you want to know
 exactly how we have achieved this, all of our code is
 [open source]({@githubUrl@})!
 
-## About the release: QuestDB 4.2
+## About the release: Crusher 4.2
 
 ### Summary
 

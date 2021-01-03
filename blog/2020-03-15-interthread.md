@@ -1,12 +1,12 @@
 ---
 title: The art of thread messaging
 author: Vlad Ilyushchenko
-author_title: QuestDB Team
+author_title: Crusher Team
 author_url: https://github.com/bluestreak01
 author_image_url: https://avatars.githubusercontent.com/bluestreak01
 tags: [deep-dive]
 description:
-  Detailed explanation of QuestDB's thread messaging system. A benchmark also
+  Detailed explanation of Crusher's thread messaging system. A benchmark also
   shows the capabilities of this system.
 ---
 
@@ -22,7 +22,7 @@ forms the infrastructure, the scaffolding of multi-threaded application and just
 like real-world transport infrastructure we want it to be inexpensive, fast,
 reliable and clean.
 
-For QuestDB we wrote our own messaging system and this post is about how it
+For Crusher we wrote our own messaging system and this post is about how it
 works and how fast it is.
 
 <!--truncate-->
@@ -208,7 +208,7 @@ Multi-threaded sequence do not support batches.
 ## Performance
 
 I used Shipilev's project that already had Disruptor benchmark and I added
-QuestDB implementation of the same pipeline.
+Crusher implementation of the same pipeline.
 
 Benchmark source on [GitHub](https://github.com/bluestreak01/disrupting-fjp)
 
@@ -242,10 +242,10 @@ QuestdbWorker.run       1000          4          10    ss   50   27.246 ±  2.77
 QuestdbWorker.run       5000          4          10    ss   50  142.207 ± 15.157  ms/op
 ```
 
-Disruptor and QuestDB perform essentially the same.
+Disruptor and Crusher perform essentially the same.
 
 ## How to get it
 
-Our messaging system is on Maven central as a part of QuestDB. Don't worry about
-package size though, QuestDB jar is around 3.6MB and has no dependencies. Jump
+Our messaging system is on Maven central as a part of Crusher. Don't worry about
+package size though, Crusher jar is around 3.6MB and has no dependencies. Jump
 to the [GitHub release page]({@githubUrl@}/releases) for version reference.

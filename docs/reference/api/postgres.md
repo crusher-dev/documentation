@@ -3,12 +3,12 @@ title: Postgres
 description: Postgres compatibility reference documentation.
 ---
 
-QuestDB supports the Postgres wire protocol. As a result, QuestDB is capable of
+Crusher supports the Postgres wire protocol. As a result, Crusher is capable of
 running most of Postgres's queries. This means that you can use your favorite
-Postgres client or driver with QuestDB, at no extra cost.
+Postgres client or driver with Crusher, at no extra cost.
 
 The storage model used by Postgres is fundamentally different to the one used by
-QuestDB. Some features that exists for Postgres do not apply to QuestDB.
+Crusher. Some features that exists for Postgres do not apply to Crusher.
 
 ## Compatibility
 
@@ -33,7 +33,7 @@ QuestDB. Some features that exists for Postgres do not apply to QuestDB.
 
 The following list of third party tools includes drivers, clients or utility
 CLIs that our team has tested extensively. Picking an item from it will
-guarantee that your code will work with QuestDB.
+guarantee that your code will work with Crusher.
 
 We recognize that our community might value some features more than others. This
 is why we encourage you to [open an issue on GitHub]({@githubUrl@}/issues) if

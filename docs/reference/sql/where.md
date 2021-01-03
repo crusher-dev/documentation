@@ -16,7 +16,7 @@ detailed thereafter.
 
 ### Logical operators
 
-QuestDB supports `AND`, `OR`, `NOT` as logical operators and can assemble
+Crusher supports `AND`, `OR`, `NOT` as logical operators and can assemble
 conditions using brackets `()`.
 
 ![Flow chart showing the detailed syntax of the WHERE clause](/img/docs/diagrams/whereComplex.svg)
@@ -29,7 +29,7 @@ a = 1 AND (b = 2 OR c = 3 AND NOT d);
 
 ## Symbol and string
 
-QuestDB can filter strings and symbols based on equality, inequality, and
+Crusher can filter strings and symbols based on equality, inequality, and
 regular expression patterns.
 
 ### Exact match
@@ -130,7 +130,7 @@ SELECT * FROM users WHERE NOT name in('Tim', 'Tom');
 
 ## Numeric
 
-QuestDB can filter numeric values based on equality, inequality, comparison, and
+Crusher can filter numeric values based on equality, inequality, comparison, and
 proximity
 
 :::note
@@ -205,7 +205,7 @@ SELECT * FROM users WHERE NOT isActive;
 
 ## Timestamp and date
 
-QuestDB supports both its own timestamp search notation and standard search
+Crusher supports both its own timestamp search notation and standard search
 based on inequality. This section describes the use of the
 `timestamp search notation` which is efficient and fast but requires a
 [designated timestamp](/docs/concept/designated-timestamp/). Remember,

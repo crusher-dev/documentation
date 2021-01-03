@@ -1,11 +1,11 @@
 ---
-title: My journey making QuestDB
+title: My journey making Crusher
 author: Vlad Ilyushchenko
-author_title: QuestDB Team
+author_title: Crusher Team
 author_url: https://github.com/bluestreak01
 author_image_url: https://avatars.githubusercontent.com/bluestreak01
 description:
-  The detailed story of how the open source time series database QuestDB came to
+  The detailed story of how the open source time series database Crusher came to
   life.
 tags: [hackernews, story]
 image: /img/blog/2020-08-06/banner.jpg
@@ -24,7 +24,7 @@ image: /img/blog/2020-08-06/banner.jpg
 </div>
 
 A few weeks ago, I posted
-[the story of how I started QuestDB on Hacker News](https://news.ycombinator.com/item?id=23975807).
+[the story of how I started Crusher on Hacker News](https://news.ycombinator.com/item?id=23975807).
 As it seems several people found the story interesting, I thought I would post
 it here.
 
@@ -72,7 +72,7 @@ space.
 
 ## Taking the plunge
 
-With some money aside, I left my job and started to work on QuestDB solo. I used
+With some money aside, I left my job and started to work on Crusher solo. I used
 Java and a small C layer to interact directly with the OS API without passing
 through a selector API. Although existing OS API wrappers would have been easier
 to get started with, the overhead increases complexity and hurts performance. I
@@ -84,9 +84,9 @@ garbage.
 As I had my first kid, I had to take contracting gigs to make ends meet over the
 following 6 years. All the stuff I had been learning boosted my confidence and I
 started performing well at interviews. This allowed me to get better paying
-contracts, I could take fewer jobs and free up more time to work on QuestDB
+contracts, I could take fewer jobs and free up more time to work on Crusher
 while looking after my family. I would do research during the day and implement
-this into QuestDB at night. I was constantly looking for the next thing, which
+this into Crusher at night. I was constantly looking for the next thing, which
 would take performance closer to the limits of the hardware.
 
 ## Back to the drawing board
@@ -120,10 +120,10 @@ I published more details when we released a demo server a few weeks ago on
 [demo](http://try.questdb.io:9000/) is still available to try online with a
 pre-loaded dataset of 1.6 billion rows. Although it was hard and discouraging at
 first, this rewrite turned out to be the second best thing that happened to
-QuestDB.
+Crusher.
 
 The best thing was that people started to contribute to the project. I am really
-humbled that Tanc and Nic left our previous employer to build QuestDB. A few
+humbled that Tanc and Nic left our previous employer to build Crusher. A few
 months later, former colleagues of mine left their stable low-latency jobs at
 banks to join us. I take this as a huge responsibility and I don’t want to let
 these guys down. The amount of work ahead gives me headaches and goosebumps at

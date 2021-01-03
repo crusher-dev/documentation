@@ -64,10 +64,10 @@ const Footer = () => {
           )}
         >
           <img
-            alt="QuestDB logo"
+            alt="Crusher logo"
             className={footerStyles.footer__logo}
-            src="/img/footer/questdb.svg"
-            title="QuestDB - Fastest open source database for time series and analytics"
+            src="/img/main/logo.svg"
+            title="Crusher - Fastest open source database for time series and analytics"
           />
           <p className={footerStyles.footer__tagline}>{siteConfig.tagline}</p>
 
