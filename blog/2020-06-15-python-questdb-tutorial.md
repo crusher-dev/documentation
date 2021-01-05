@@ -18,7 +18,7 @@ A short tutorial for Querying data from Crusher in a Jupyter Notebook.
 To get started, you'll need a few things installed and set up. This should be
 quick.
 
-**Crusher:** To download Crusher, you can check [Get Crusher](/get-questdb/).
+**Crusher:** To download Crusher, you can check [Get Crusher](/get-crusher/).
 You can also find complete instructions for [Docker](/docs/get-started/docker/),
 [Homebrew](/docs/get-started/homebrew/) on macOS or the
 [binaries](/docs/get-started/binaries/).

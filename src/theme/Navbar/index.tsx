@@ -117,7 +117,7 @@ function Navbar(): JSX.Element {
           <Button
             className={styles.getQuestdb}
             size="xsmall"
-            to="/get-questdb/"
+            to="/get-crusher/"
           >
             Get Crusher
           </Button>

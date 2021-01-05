@@ -49,6 +49,7 @@ function variable() {
 }
 
 const config = {
+  onBrokenLinks: "ignore",
   title: "Time made easy and fast faster",
   tagline:
     "Crusher is an no-code testing tool helping developers ship code faster without issues.",
@@ -142,8 +143,8 @@ const config = {
       theme: require("./src/internals/prism-dracula"),
     },
     algolia: {
-      apiKey: "",
-      indexName: "questdb",
+      apiKey: "sdsf",
+      indexName: "crusher",
     },
     navbar: {
       title: " ",

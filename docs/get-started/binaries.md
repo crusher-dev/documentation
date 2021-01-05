@@ -14,7 +14,7 @@ Crusher comes with a script `questdb.sh` for Linux/FreeBSD and an executable
 
 ## Download
 
-You can find the latest binaries on the [Get Crusher](/get-questdb/) page. The
+You can find the latest binaries on the [Get Crusher](/get-crusher/) page. The
 release notes are on our [GitHub release]({@githubUrl@}/releases) page.
 
 ## Prerequisites
