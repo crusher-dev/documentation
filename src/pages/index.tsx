@@ -165,7 +165,7 @@ const Jumbotron = () => {
     >
       <div className={jumbotronStyles.jumbotron__left}>
         <h1 className={clsx("jumbotron", jumbotronStyles.jumbotron__title)}>
-          Fast SQL for time series
+          Fast and simple testing for modern teams
         </h1>
         <p className={clsx("jumbotron", jumbotronStyles.jumbotron__subtitle)}>
           {siteConfig.tagline}
@@ -739,12 +739,14 @@ const Home = () => {
           <link rel="canonical" href={siteConfig.url} />
         </DocusaurusHead>
         <Jumbotron />
-        <Feature />
-        <QueryScroller />
-        <Why />
-        <Cards />
-        <Console />
-        <SeenOn />
+        <div style={{ display: "none" }}>
+          <Feature />
+          <QueryScroller />
+          <Why />
+          <Cards />
+          <Console />
+          <SeenOn />
+        </div>
       </Layout>
     </MetadataContextProvider>
   )

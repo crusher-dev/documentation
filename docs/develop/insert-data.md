@@ -413,7 +413,9 @@ start()
 
 </TabItem>
 
+
 <TabItem value="go">
+
 
 ```go
 package main
@@ -457,7 +459,9 @@ func checkErr(err error) {
 
 </TabItem>
 
+
 <TabItem value="java">
+
 
 ```java
 package com.myco;
@@ -489,6 +493,7 @@ class App {
 
 
 <TabItem value="c">
+
 
 ```c
 // compile with
@@ -522,6 +527,7 @@ int main() {
 
 <TabItem value="python">
 
+
 ```python
 import psycopg2
 try:
@@ -544,6 +550,7 @@ finally:
 ```
 
 </TabItem>
+
 
 </Tabs>
 

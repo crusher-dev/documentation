@@ -1,24 +1,24 @@
 const visit = require("unist-util-visit")
 const ssrTemplate = require("./src/internals/ssr.template")
 
-const githubOrgUrl = "https://github.com/questdb"
-const domain = "questdb.io"
+const githubOrgUrl = "https://github.com/crusherdev"
+const domain = "crusher.dev.io"
 
 const customFields = {
-  artifactHubUrl: "https://artifacthub.io/packages/helm/questdb/questdb",
+  artifactHubUrl: "",
   copyright: `Copyright © ${new Date().getFullYear()} Crusher`,
-  crunchbaseUrl: "https://www.crunchbase.com/organization/quest-db",
+  crunchbaseUrl: "",
   description:
-    "Crusher is an open source database designed to make time-series lightning fast and easy. It exposes a high performance REST API and is Postgres compatible.",
-  dockerUrl: "https://hub.docker.com/r/questdb/questdb",
+    "Crusher is an no-code testing tool helping developers ship code faster without issues.",
+  dockerUrl: "",
   domain,
   githubOrgUrl,
-  githubUrl: `${githubOrgUrl}/questdb`,
+  githubUrl: `${githubOrgUrl}/`,
   helmVersion: "0.2.5",
-  linkedInUrl: "https://www.linkedin.com/company/questdb/",
-  oneLiner: "Fast SQL open source database for time series - Crusher",
+  linkedInUrl: "https://www.linkedin.com/company/crusher.dev/",
+  oneLiner: "Fast and easy no-code testing tool - Crusher",
   slackUrl: `https://slack.${domain}`,
-  twitterUrl: "https://twitter.com/questdb",
+  twitterUrl: "https://twitter.com/crusherdev",
   version: "5.0.4",
 }
 
@@ -49,13 +49,14 @@ function variable() {
 }
 
 const config = {
-  title: "Time series data, faster",
-  tagline: "Crusher is the fastest open source time series database",
+  title: "Time made easy and fast faster",
+  tagline:
+    "Crusher is an no-code testing tool helping developers ship code faster without issues.",
   url: `https://${customFields.domain}`,
   baseUrl: "/",
   favicon: "/img/favicon.png",
   organizationName: "Crusher",
-  projectName: "questdb",
+  projectName: "crusher",
   customFields,
   plugins: [
     require.resolve("./plugins/fetch-release"),
@@ -141,7 +142,7 @@ const config = {
       theme: require("./src/internals/prism-dracula"),
     },
     algolia: {
-      apiKey: "b2a69b4869a2a85284a82fb57519dcda",
+      apiKey: "",
       indexName: "questdb",
     },
     navbar: {

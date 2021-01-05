@@ -61,7 +61,9 @@ import TabItem from "@theme/TabItem"
   { label: "Java", value: "java" },
 ]}>
 
+
 <TabItem value="sql">
+
 
 ```questdb-sql
 SELECT * FROM users;
@@ -70,6 +72,7 @@ SELECT * FROM users;
 </TabItem>
 <TabItem value="rest">
 
+
 ```shell
 curl -G "http://localhost:13005/exec"
 ```
@@ -77,13 +80,16 @@ curl -G "http://localhost:13005/exec"
 </TabItem>
 <TabItem value="java">
 
+
 ```java
 final CairoEngine engine = new CairoEngine();
 ```
 
 </TabItem>
 
+
 </Tabs>
+
 
 ### "Script" code block
 

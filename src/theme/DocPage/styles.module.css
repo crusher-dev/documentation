@@ -54,7 +54,7 @@ ul ul :global(.table-of-contents__link--active::before) {
   left: -33px;
 }
 
-.prism-code{
+.prism-code {
   background: #151b1e;
 }
 
