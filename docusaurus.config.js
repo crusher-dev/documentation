@@ -50,7 +50,7 @@ function variable() {
 
 const config = {
   onBrokenLinks: "ignore",
-  title: "Time made easy and fast faster",
+  title: "Easy abd fast testing",
   tagline:
     "Crusher is an no-code testing tool helping developers ship code faster without issues.",
   url: `https://${customFields.domain}`,
