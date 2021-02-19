@@ -228,7 +228,7 @@ const config = {
           title: "More",
           items: [
             {
-              label: "Blog",
+              label: "Docs",
               to: "/blog/",
             },
             {
