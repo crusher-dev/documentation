@@ -59,7 +59,7 @@ function Navbar(): JSX.Element {
     }
   }, [windowSize])
 
-  const { leftItems, rightItems } = splitNavItemsByPosition(items)
+  const { leftItems } = splitNavItemsByPosition(items)
 
   return (
     <nav
@@ -107,9 +107,6 @@ function Navbar(): JSX.Element {
           ))}
         </div>
         <div className="navbar__items navbar__items--right">
-          {rightItems.map((item, i) => (
-            <NavbarItem {...item} key={i} />
-          ))}
           <SearchBar
             handleSearchBarToggle={setIsSearchBarExpanded}
             isSearchBarExpanded={isSearchBarExpanded}

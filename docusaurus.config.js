@@ -50,7 +50,7 @@ function variable() {
 
 const config = {
   onBrokenLinks: "ignore",
-  title: "Easy abd fast testing",
+  title: "Easy and fast testing",
   tagline:
     "Crusher is an no-code testing tool helping developers ship code faster without issues.",
   url: `https://${customFields.domain}`,
@@ -198,32 +198,32 @@ const config = {
           title: "Crusher",
           items: [
             {
-              label: "Documentation",
+              label: "Homepage",
               to: "/docs/introduction/",
             },
             {
-              label: "Roadmap",
+              label: "Prixing",
               href: `${customFields.githubUrl}/projects/3`,
             },
             {
-              label: "Careers",
+              label: "Our Story",
               to: "/careers/",
             },
           ],
         },
-        {
-          title: "Community",
-          items: [
-            {
-              label: "Slack",
-              href: customFields.slackUrl,
-            },
-            {
-              label: "Twitter",
-              href: customFields.twitterUrl,
-            },
-          ],
-        },
+        // {
+        //   title: "Community",
+        //   items: [
+        //     {
+        //       label: "Slack",
+        //       href: customFields.slackUrl,
+        //     },
+        //     {
+        //       label: "Twitter",
+        //       href: customFields.twitterUrl,
+        //     },
+        //   ],
+        // },
         {
           title: "More",
           items: [

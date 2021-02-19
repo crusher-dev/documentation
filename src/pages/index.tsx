@@ -177,29 +177,7 @@ const Jumbotron = () => {
           >
             Live Demo
           </Button>
-          <Button
-            className={clsx(
-              jumbotronStyles.jumbotron__link,
-              jumbotronStyles["jumbotron__cta--github"],
-            )}
-            href={siteConfig.customFields.githubUrl}
-            icon={
-              <img
-                alt="GitHub logo"
-                height="26"
-                src="/img/github.svg"
-                title="GitHub"
-                width="26"
-              />
-            }
-            variant="secondary"
-          >
-            GitHub
-          </Button>
         </div>
-        <p className={jumbotronStyles.jumbotron__description}>
-          Query our demo dataset with 1.6 billion rows in milliseconds
-        </p>
       </div>
 
       <div className={jumbotronStyles.jumbotron__right}>
